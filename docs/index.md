@@ -3,29 +3,25 @@ title: Home
 nav_order: 0
 ---
 
-{: .attention }
-> Any text enclosed by `[ ]` are placeholders, including the opening and closing brackets.
->
-> You may delete this `attention` box.
+# Midnight Mixes
 
-# [Project Name]
-
-[Project description]
+Midnight Mixes ist eine Webseite, die Rezepte für Cocktails und Snacks gleichzeitig
+bereitstellt.
 
 ## Team members
 
-### [Jane Dane]
+### Julia Kantor
 
 About
-: Some info about Jane
+: Info about Julia
 
 Matr.-Nr.
-: 1234567
+: 77212021090
 
-### [Joe Doe]
+### Tatjana Knoll
 
 About
-: Some info about Joe
+: Info about Tatjana
 
 Matr.-Nr.
 : 1234567
