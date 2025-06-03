@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Midnight Mixes - Login/Registrierung</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Unser eigenes Modal-CSS (static/css/modal.css) -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}" />
+</head>
+<body>
+  <!-- Seiten-Inhalt -->
+  <div class="container text-center" style="margin-top: 50px;">
+    <h1>Willkommen bei Midnight Mixes</h1>
+    <p>Klicke auf den Button, um dich einzuloggen oder zu registrieren:</p>
+
+    <!-- Link/​Button, der per CSS das Modal targetet -->
+    <a href="#modal-overlay" class="btn-open">Open Modal</a>
+  </div>
+
+  <!-- Overlay/Modal – Standardmäßig unsichtbar, wird durch :target sichtbar -->
+  <div id="modal-overlay">
+    <div id="modal-container">
+      <!-- Header mit Logo und Schließen-Link -->
+      <div class="modal-header">
+        <img
+          src="{{ url_for('static', filename='images/logo.png') }}"
+          alt="Midnight Mixes Logo"
+          width="140" height="100"
+        />
+        <!-- href="#" führt zurück auf „keine ID“ und schließt das Modal wieder -->
+        <a href="#" class="modal-close">✕</a>
+      </div>
+
+      <!-- Tab-Navigation -->
+      <div class="modal-tabs">
+        <a
+          href="{{ url_for('register') }}#modal-overlay"
+          class="tab-btn {% if active == 'register' %}active{% endif %}"
+        >
+          REGISTER
+        </a>
+        <a
+          href="{{ url_for('login') }}#modal-overlay"
+          class="tab-btn {% if active == 'login' %}active{% endif %}"
+        >
+          LOG IN
+        </a>
+      </div>
+
+      <!-- Modal-Body: entweder Registrieren oder Login -->
+      <div class="modal-body">
+        {% if active == 'register' %}
+          <form
+            action="{{ url_for('register_submit') }}"
+            method="POST"
+            class="form"
+          >
+            <label for="register-email">E-Mail</label>
+            <input
+              id="register-email"
+              type="text"
+              name="email"
+              placeholder="Enter E-Mail"
+              required
+            />
+
+            <label for="register-password">Password</label>
+            <input
+              id="register-password"
+              type="password"
+              name="password"
+              placeholder="Passwort"
+              required
+            />
+
+            <label for="register-confirm">Confirm Password</label>
+            <input
+              id="register-confirm"
+              type="password"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              required
+            />
+
+            <button type="submit" class="btn-primary">CREATE ACCOUNT</button>
+          </form>
+        {% elif active == 'login' %}
+          <form action="{{ url_for('login_submit') }}" method="POST" class="form">
+            <label for="login-email">E-Mail</label>
+            <input
+              id="login-email"
+              type="text"
+              name="email"
+              placeholder="Enter E-Mail"
+              required
+            />
+
+            <label for="login-password">Password</label>
+            <input
+              id="login-password"
+              type="password"
+              name="password"
+              placeholder="Passwort"
+              required
+            />
+
+            <button type="submit" class="btn-primary">LOG IN</button>
+          </form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Flash-Messages (oben zentriert) -->
+  <div class="flash-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+</body>
+</html>
+
+
+
+
