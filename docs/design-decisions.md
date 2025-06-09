@@ -4,7 +4,7 @@ nav_order: 3
 ---
 
 {: .label }
-[Jane Dane]
+[Tatjana K.]
 
 {: .no_toc }
 # Design decisions
@@ -16,31 +16,9 @@ nav_order: 3
 {: toc }
 </details>
 
-## 01: [Title]
 
-### Meta
 
-Status
-: **Work in progress** - Decided - Obsolete
-
-Updated
-: DD-MMM-YYYY
-
-### Problem statement
-
-[Describe the problem to be solved or the goal to be achieved. Include relevant context information.]
-
-### Decision
-
-[Describe **which** design decision was taken for **what reason** and by **whom**.]
-
-### Regarded options
-
-[Describe any possible design decision that will solve the problem. Assess these options, e.g., via a simple pro/con list.]
-
----
-
-## [Example, delete this section] 01: How to access the database - SQL or SQLAlchemy 
+## 01: Cocktail DB
 
 ### Meta
 
@@ -48,45 +26,141 @@ Status
 : Work in progress - **Decided** - Obsolete
 
 Updated
-: 30-Jun-2024
+: 17-Apr-2025
 
 ### Problem statement
 
-Should we perform database CRUD (create, read, update, delete) operations by writing plain SQL or by using SQLAlchemy as object-relational mapper?
-
-Our web application is written in Python with Flask and connects to an SQLite database. To complete the current project, this setup is sufficient.
-
-We intend to scale up the application later on, since we see substantial business value in it.
-
-
-
-Therefore, we will likely:
-Therefore, we will likely:
-Therefore, we will likely:
-
-+ Change the database schema multiple times along the way, and
-+ Switch to a more capable database system at some point.
+Wir benötigen eine Datenbank mit Cocktailrezepten und den dazugehörigen Zutaten, um einen Webservice für Cocktails zu erstellen.
 
 ### Decision
 
-We stick with plain SQL.
+Wir verwenden ein Schema und Daten aus einer öffentlich zugänglichen Quelle. Die Hauptmerkmale der Datenbank sind, dass Cocktails und ihre Zutaten bereits miteinander verknüpft sind und dass sie bereits über genügend vorerfasste Daten verfügt.
+Die Gründe:
+1) Das Datenbankschema ist als korrekt erachtet.
+2) Die gefundene Datenbank hat zunächst eine große Menge an Daten.
+3) Die Zeit und die Ressourcen reichen nicht aus, um eine neue Datenbank von Grund auf zu erstellen.
 
-Our team still has to come to grips with various technologies new to us, like Python and CSS. Adding another element to our stack will slow us down at the moment.
+Die Entscheidung wurde gemeinsam von Tatiana K. und Julia K. getroffen.
 
-Also, it is likely we will completely re-write the app after MVP validation. This will create the opportunity to revise tech choices in roughly 4-6 months from now.
-*Decision was taken by:* github.com/joe, github.com/jane, github.com/maxi
+Quelle der DB: https://www.kaggle.com/datasets/filipkin/cocktails-and-ingredients-dataset
 
 ### Regarded options
 
-We regarded two alternative options:
+Wir erstellen und befüllen die Datenbank manuell.
 
-+ Plain SQL
-+ SQLAlchemy
+Vorteile:
+1) Wir haben die Kontrolle über den Inhalt der Datenbank.
 
-| Criterion | Plain SQL | SQLAlchemy |
-| --- | --- | --- |
-| **Know-how** | ✔️ We know how to write SQL | ❌ We must learn ORM concept & SQLAlchemy |
-| **Change DB schema** | ❌ SQL scattered across code | ❔ Good: classes, bad: need Alembic on top |
-| **Switch DB engine** | ❌ Different SQL dialect | ✔️ Abstracts away DB engine |
+Nachteile:
+1) Zeitaufwendig.
+2) Risiko von inkonsistenten Daten.
 
----
+
+## 02: Snack DB
+
+### Meta
+
+Status
+: Work in progress - **Decided** - Obsolete
+
+Updated
+: 20-Apr-2025
+
+### Problem statement
+
+Wir benötigen eine Datenbank mit Snacks, um einen Webservice für die Suche von Cocktails und dazu gehörenden Snack zu erstellen.
+
+### Decision
+
+Wir erstellen eine Snack-Datenbank manuell.
+
+Die Entscheidung wurde gemeinsam von Tatiana K. und Julia K. getroffen.
+Julia K. erstellt und befüllt eine Tabelle mit Snacks manuell.
+
+### Regarded options
+
+Wir nutzen eine öffentlich zugängliche Datenbank von Snacks.
+
+Vorteile:
+1) Zeitsparend.
+2) Diese Datenbank wird bereits eine große Menge an Daten haben.
+3) Das Datenbankschema wird wahrscheinlich richtig erstellt.
+
+Nachteile:
+1) Wir haben keine Kontrolle über den Inhalt der Datenbank.
+2) Es besteht die Wahrscheinlichkeit, dass der Inhalt der Snack-Datenbank nicht mit unserer Cocktail-Datenbank übereinstimmt.
+
+
+
+## 03: Die Beziehung Cocktails mit Snacks
+
+### Meta
+
+Status
+: Work in progress - **Decided** - Obsolete
+
+Updated
+: 01-Mai-2025
+
+### Problem statement
+
+Wir möchten ein relationales Modell für die Beziehungen zwischen Snacks und Cocktails definieren, das der Funktionalität unseres Webservices für die Suche nach Cocktails und passenden Snacks entspricht.
+
+### Decision
+
+Jeder Cocktail besteht aus einer oder mehreren Zutaten. Jede der Zutaten hat eine feste Position (Postion 1, Position 2, usw.) im Cocktail. Für jede Grundzutat, die Alkohol ist, wird ein einziger Snack angeboten. Um den Snack für den Cocktail zu bestimmen, wählen wir den Snack für die alkoholische Zutat des Cocktails mit der kleinsten Positionszahl.
+
+In der Datenbank kann dieses Schema durch das folgende Diagramm dargestellt werden:
+
+![snack_cocktail_relation_diagram.png](snack_cocktail_relation_diagram.png)
+
+
+**Erklärung anhand zwei Beispiele:**
+
+1) Cocktail-Id: 11002
+
+| Zutaten   | Position im Cocktail |
+|-----------|----------------------|
+| Vodka     | 1                    |
+| Light rum | 2                    |
+| Gin       | 3                    |
+| Tequila   | 4                    |
+| Lemon     | 5                    |
+| Coca-Cola | 6                    |
+
+In diesem Beispiel sind 4 Zutaten alkoholisch. Nach der Logik unserer Datenbank wählen wir den Snack nach Alkohol mit der kleinsten Positionsnummer aus. Das bedeutet, dass für diesen Cocktail der Alkohol an Position 1 für die Snackauswahl ausschlaggebend ist.
+
+2) Cocktail-Id: 14564
+
+| Zutaten              | Position im Cocktail |
+|----------------------|----------------------|
+| Cranberry juice      | 1                    |
+| Soda water           | 2                    |
+| Midori melon liqueur | 3                    |
+| Creme de Banane      | 4                    |
+
+In diesem Beispiel haben wir zwar vier Zutaten, aber nur eine davon ist alkoholisch. Diese befindet sich auf Position 3 und ist somit ausschlaggebend für die Snackauswahl.
+
+Die Entscheidung wurde von Tatiana K. getroffen.
+Tatjana K. übernimmt die SQL-Anfragen und die Erstellung der Relationen Cocktail-Snack-Tabellen.
+
+### Regarded options
+
+**1) Wir weisen jedem Cocktail einen eigenen Snack zu.**
+
+Pro:
+- Einfacheres relationales Datenbankmodell
+
+Contra:
+- Duplizierung der Daten (z.B. mehrere Cocktails werden die gleichen Snacks haben) -> Gegenteil von Normalisierung einer DB
+- Logische Inkonsistenz, z.B. Cocktails mit ähnlichen Zutaten unterschiedliche Snacks zuzuordnen.
+
+
+**2) Wir ordnen jedem Cocktail mit mehreren alkoholischen Grundzutaten eine Reihe von entsprechenden Snacks zu.**
+
+Pro:
+- die Möglichkeit, ein flexibles Modell für die Snackauswahl zu erstellen
+
+Contra:
+- komplexeres Datenbankschema
+- Logische Inkonsistenz, z.B. Zuordnung von zueinander unpassenden Snacks
