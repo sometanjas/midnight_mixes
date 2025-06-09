@@ -1,0 +1,49 @@
+<!--Used a chatGPT generated template https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Midnight Mixes</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+<!--how to make a button clickable -> redirect to another page: https://chatgpt.com/c/68459275-ee20-800e-bcc7-2dfeec0b40b1-->
+<header class="navbar">
+    <div class="logo">
+        <img src="/static/images/logo.png" alt="Midnight-Mixes-Logo" />
+        <span>Midnight Mixes</span>
+    </div>
+    <nav class="nav-buttons">
+        <a href="{{ url_for('index') }}">
+            <button>HOME</button>
+        </a>
+        <a href="{{ url_for('login') }}">
+            <button>LOG IN</button>
+        </a>
+    </nav>
+</header>
+<!--how to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586-->
+<main class="main-content">
+    <div class="card">
+            <img src="/static/images/cocktail_images/11936.jpg" alt="Cocktail by Ingredient" />
+        <div class="overlay">FILTER BY INGREDIENT</div>
+    </div>
+    <div class="card">
+        <a href="/cocktails/search/random">
+        <img src="/static/images/cocktail_images/11000.jpg" alt="Random Cocktail" />
+        </a>
+        <div class="overlay"> <a href="/cocktails/search/random">RANDOM COCKTAIL</a>
+        </div>
+    </div>
+    <div class="card">
+        <img src="/static/images/cocktail_images/11005.jpg" alt="Cocktail by Name" />
+        <div class="overlay">FILTER BY NAME</div>
+    </div>
+    <div class="card">
+        <img src="/static/images/cocktail_images/178347.jpg" alt="Cocktail by Level" />
+        <div class="overlay">FILTER BY LEVEL</div>
+    </div>
+</main>
+</body>
+</html>
