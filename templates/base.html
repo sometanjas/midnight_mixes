@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Midnight Mixes{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;1,6..96,500&display=swap" rel="stylesheet">
+
+  <!-- Modal‐Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/modal.css') }}">
+  <!-- Basis‐Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+</head>
+<body>
+  <!-- Banner -->
+  <header class="banner">
+    <div class="logo-container">
+      <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='images/logo_base.png') }}" alt="Midnight Mixes Logo" class="banner-logo">
+      </a>
+      <h1 class="banner-title">Midnight Mixes</h1>
+    </div>
+    <nav class="banner-nav">
+      <a href="{{ url_for('index') }}" class="nav-btn">HOME</a>
+      {% if session.get('user_id') %}
+        <!-- TODO: Route hinzufügen -->
+        <a href="{{ url_for('index') }}" class="nav-btn heart-btn">❤</a>
+        <a href="{{ url_for('logout') }}" class="nav-btn">LOG OUT</a>
+      {% else %}
+        <a href="#modal-overlay" class="nav-btn">LOG IN</a>
+      {% endif %}
+    </nav>
+  </header>
+
+  <!-- Seiten Inhalt -->
+  <main class="content">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
+

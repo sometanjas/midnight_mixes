@@ -1,0 +1,73 @@
+/* Body */
+ body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #000;     
+    color: #f0eadc;              
+    overflow-x: hidden;
+  }
+  
+  /* Banner */
+  .banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #872d37;   
+    padding: 8px 24px;
+  }
+  
+  /* Logo + Titel */
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .banner-logo {
+    width: 68px;
+    height: auto;
+  }
+  
+  .banner-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    align-self: flex-end;
+    color: #f0eadc;
+    margin: 0;
+  }
+  
+  /* Navigation im Banner */
+  .banner-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-btn {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 8px 16px;
+    background-color: #f0eadc;   
+    color: #512127;             
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  
+  .nav-btn:hover {
+    background-color: #f0eadc;
+  }
+  
+  /* Herz-Button */
+  .heart-btn {
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 8px 12px;
+  }
+  
+  /* Main‐Content */
+  .content {
+    padding: 24px;
+  }

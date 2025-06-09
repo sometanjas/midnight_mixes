@@ -7,26 +7,37 @@
   
   body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    background-color: #111;
-    color: #ede9df; /* Hellbeige Text */
+    background-color: #000;
+    color: #f0eadc;
     height: 100vh;
     overflow: hidden; /* Verhindert Scrollen hinter dem Modal */
   }
+
+  .logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    font-weight: normal;
+    align-self: flex-end;
+    color: #f0eadc;
+    margin: 0;
+  }
   
-  /* Overlay / Modal */
-  /* Normalerweise versteckt */
+  /* Overlay  Modal */
   #modal-overlay {
-    display: none;
+    display: none;  /* Normalerweise versteckt */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: #000;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
-    /* Hinweis: display:flex wird erst bei :target gesetzt */
   }
   
   /* Sobald in der URL #modal-overlay steht, wird display:flex aktiv */
@@ -34,16 +45,13 @@
     display: flex;
   }
   
-  /* Modal Container */
   #modal-container {
-    background-color: #000; /* Schwarz */
+    background-color: #000; 
     width: 360px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   }
   
-  /* Modal Header */
   .modal-header {
     position: relative;
     background-color: #000;
@@ -51,19 +59,19 @@
     text-align: center;
   }
   
-  .modal-header .logo {
+  .logo {
     width: 48px;
     display: inline-block;
     margin-bottom: 4px;
   }
   
-  /* Schließen-Link: rechts oben */
+  /* Close modal */
   .modal-header .modal-close {
     position: absolute;
     top: 12px;
     right: 16px;
     font-size: 22px;
-    color: #ede9df;
+    color: #f0eadc;
     text-decoration: none;
     cursor: pointer;
   }
@@ -71,28 +79,25 @@
   /* Tab-Navigation */
   .modal-tabs {
     display: flex;
-    border-bottom: 1px solid #3b2a2a; /* dezente Trennlinie */
   }
   
   .modal-tabs .tab-btn {
     flex: 1;
     padding: 12px 0;
-    background-color: #693030; /* dunkles Weinrot (inaktiv) */
+    background-color: #512127; /* dunkles Weinrot (inaktiv) */
     text-align: center;
-    color: #ede9df;
+    color: #f0eadc;
     font-size: 16px;
-    letter-spacing: 1px;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.2s ease;
   }
   
   .modal-tabs .tab-btn.active {
-    background-color: #8b3b3b; /* helleres Weinrot (aktiv) */
+    background-color: #872d37; /* helleres Weinrot (aktiv) */
   }
   
   .modal-tabs .tab-btn:not(.active):hover {
-    background-color: #5a2727; /* beim Hover etwas dunkler */
+    background-color: #512127; /* beim Hover etwas dunkler */
   }
   
   /* Modal Body / Formular */
@@ -115,33 +120,31 @@
     padding: 12px 14px;
     border: none;
     border-radius: 25px;
-    background-color: #ede9df; /* hellbeige */
+    background-color: #f0eadc; 
     color: #111;
     font-size: 14px;
     outline: none;
-    transition: box-shadow 0.2s ease;
   }
   
   .form input:focus {
-    box-shadow: 0 0 0 2px rgba(235, 235, 235, 0.8);
+    box-shadow: 0 0 0 2px #ffffff;
   }
   
   .form .btn-primary {
     margin-top: 24px;
     align-self: center;
     padding: 12px 28px;
-    background-color: #333; /* dunkles Grau */
-    color: #ede9df; /* hellbeige Text */
+    background-color: #333; 
+    color: #f0eadc; 
     border: none;
     border-radius: 25px;
     font-size: 16px;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
   }
   
   .form .btn-primary:hover {
-    background-color: #4d4d4d;
+    background-color: #37373a;
   }
   
   /* Flash-Messages */
@@ -162,23 +165,6 @@
     max-width: 90%;
     text-align: center;
   }
-
-  /* Button zum Öffnen */
-  .btn-open {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #693030; 
-    color: #ede9df;
-    text-decoration: none;
-    font-size: 16px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
-  }
-  
-  .btn-open:hover {
-    background-color: #8b3b3b;
-  }
   
   .flash-success {
     background-color: #2e7d32;
@@ -194,6 +180,8 @@
     background-color: #f9a825;
     color: #111;
   }
+
+
   
 
   
