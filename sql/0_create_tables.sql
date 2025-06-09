@@ -44,3 +44,10 @@ CREATE TABLE cocktail_ingr
     FOREIGN KEY (id_cocktail) REFERENCES cocktails (id) ON DELETE CASCADE,
     FOREIGN KEY (id_ingr) REFERENCES ingredients (id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS users
+(
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    email         TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL
+);
