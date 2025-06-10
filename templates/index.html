@@ -3,6 +3,11 @@
 
 {% block title %}Home - Midnight Mixes{% endblock %}
 
+{% block head %}
+    <title>Home - Midnight Mixes</title>
+    <link rel="stylesheet" href="/static/css/index.css" />
+{% endblock %}
+
 {% block content %}
 
 <link rel="stylesheet" href="/static/css/index.css" />
@@ -10,19 +15,15 @@
 <!--how to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586-->
 <main class="main-content">
     <div class="card">
-            <img src="/static/images/cocktail_images/11936.jpg" alt="Cocktail by Ingredient" />
-        <div class="overlay">FILTER BY INGREDIENT</div>
+            <img src="/static/images/card_ingr.png" alt="Cocktail by Ingredient" />
     </div>
     <div class="card">
         <a href="/cocktails/search/random">
-        <img src="/static/images/cocktail_images/11000.jpg" alt="Random Cocktail" />
-        </a>
-        <div class="overlay"> <a href="/cocktails/search/random">RANDOM COCKTAIL</a>
+        <img src="/static/images/card_random.png" alt="Random Cocktail" />
         </div>
     </div>
     <div class="card">
-        <img src="/static/images/cocktail_images/178347.jpg" alt="Cocktail by Level" />
-        <div class="overlay">FILTER BY LEVEL</div>
+        <img src="/static/images/card_level.png" alt="Cocktail by Level" />
     </div>
 </main>
 </body>
