@@ -77,7 +77,7 @@ def register():
         return redirect(url_for('login') + "#modal-overlay")
 
     # Bei GET oder Validierungsfehlern
-    return render_template("modal.html", active="register", form=form)
+    return render_template("index.html", active="register", form=form)
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -100,7 +100,7 @@ def login():
         flash("Login successful!", 'success')
         return redirect(url_for('index'))
 
-    return render_template("modal.html", active="login", form=form)
+    return render_template("index.html", active="login", form=form)
 
 
 @app.route('/cocktails/search/random', methods=['GET'])

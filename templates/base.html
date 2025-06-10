@@ -41,6 +41,16 @@
     {% block content %}{% endblock %}
   </main>
 
+   <div class="flash-container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for cat, msg in messages %}
+          <div class="flash flash-{{ cat }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
   <div id="modal-overlay">
     <div id="modal-container">
 
