@@ -12,19 +12,13 @@ bereitstellt.
 
 ### Julia Kantor
 
-About
-: Info about Julia
-
 Matr.-Nr.
 : 77212021090
 
 ### Tatjana Knoll
 
-About
-: Info about Tatjana
-
 Matr.-Nr.
-: 1234567
+: 77212015187
 
 ## Eidesstattliche Erklärung
 
