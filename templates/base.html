@@ -31,7 +31,7 @@
         <a href="{{ url_for('index') }}" class="nav-btn heart-btn">❤</a>
         <a href="{{ url_for('logout') }}" class="nav-btn">LOG OUT</a>
       {% else %}
-        <a href="#modal-overlay" class="nav-btn">LOG IN</a>
+        <a href="register#modal-overlay" class="nav-btn">LOG IN</a>
       {% endif %}
     </nav>
   </header>
@@ -48,7 +48,7 @@
       <div class="modal-header">
         <img src="{{ url_for('static', filename='images/logo.png') }}"
              alt="Midnight Mixes Logo" class="logo" />
-        <a href="#" class="modal-close">✕</a>
+        <a href="{{ url_for('index') }}" class="modal-close">✕</a>
         <h1 class="title">Midnight Mixes</h1>
       </div>
 
