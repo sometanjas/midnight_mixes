@@ -40,6 +40,72 @@
   <main class="content">
     {% block content %}{% endblock %}
   </main>
+
+  <div id="modal-overlay">
+    <div id="modal-container">
+
+      <!-- Header mit Logo -->
+      <div class="modal-header">
+        <img src="{{ url_for('static', filename='images/logo.png') }}"
+             alt="Midnight Mixes Logo" class="logo" />
+        <a href="#" class="modal-close">✕</a>
+        <h1 class="title">Midnight Mixes</h1>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="modal-tabs">
+        <a href="{{ url_for('register') }}#modal-overlay"
+           class="tab-btn {% if active=='register' %}active{% endif %}">
+          REGISTER
+        </a>
+        <a href="{{ url_for('login') }}#modal-overlay"
+           class="tab-btn {% if active=='login' %}active{% endif %}">
+          LOG IN
+        </a>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body">
+        {% if active == 'register' %}
+          <form action="{{ url_for('register') }}#modal-overlay"
+                method="POST" class="form">
+            {{ form.hidden_tag() }}
+
+            <label for="email">{{ form.email.label.text }}</label>
+            {{ form.email(id='email') }}
+            {% for e in form.email.errors %}<div class="error">{{ e }}</div>{% endfor %}
+
+            <label for="password">{{ form.password.label.text }}</label>
+            {{ form.password(id='password') }}
+            {% for e in form.password.errors %}<div class="error">{{ e }}</div>{% endfor %}
+
+            <label for="confirm_password">{{ form.confirm_password.label.text }}</label>
+            {{ form.confirm_password(id='confirm_password') }}
+            {% for e in form.confirm_password.errors %}<div class="error">{{ e }}</div>{% endfor %}
+
+            {{ form.submit(class='btn-primary') }}
+          </form>
+
+        {% elif active == 'login' %}
+          <form action="{{ url_for('login') }}#modal-overlay"
+                method="POST" class="form">
+            {{ form.hidden_tag() }}
+
+            <label for="email">{{ form.email.label.text }}</label>
+            {{ form.email(id='email') }}
+            {% for e in form.email.errors %}<div class="error">{{ e }}</div>{% endfor %}
+
+            <label for="password">{{ form.password.label.text }}</label>
+            {{ form.password(id='password') }}
+            {% for e in form.password.errors %}<div class="error">{{ e }}</div>{% endfor %}
+
+            {{ form.submit(class='btn-primary') }}
+          </form>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
 
