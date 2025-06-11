@@ -1,51 +1,12 @@
-import sqlite3
-import os
 from flask import Flask, render_template, redirect, request, url_for, flash, g
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 
-app = Flask(__name__)
 app.secret_key = "secret_key_just_for_dev_environment"  # für CSRF nötig
 
-# Pfad zur DB
-BASE_DIR = os.path.abspath(os.path.dirname(__file__))
-DATABASE = os.path.join(BASE_DIR, "db.sqlite")
-
-
-def get_db():
-    db = getattr(g, "_database", None)
-    if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-        db.row_factory = sqlite3.Row
-    return db
-
-
-@app.teardown_appcontext
-def close_connection(exception):
-    db = getattr(g, "_database", None)
-    if db is not None:
-        db.close()
-
-
-def init_db():
-    db = sqlite3.connect(DATABASE)
-    sql_dir = "sql"
-    sql_files = sorted(f for f in os.listdir(sql_dir) if f.endswith('.sql'))
-    # loop over sql files and populate database
-    for filename in sql_files:
-        file_path = os.path.join(sql_dir, filename)
-        with app.open_resource(file_path, mode="r") as f:
-            db.executescript(f.read())
-    db.commit()
-    db.close()
-
-
-@app.cli.command("init-db")
-def init_db_command():
-    init_db()
-    print("Datenbank initialisiert.")
+import db
 
 
 @app.route('/')
@@ -60,18 +21,18 @@ def register():
         email = form.email.data.strip().lower()
         pw = form.password.data
 
-        db = get_db()
-        cursor = db.execute("SELECT id FROM users WHERE email = ?", (email,))
+        db_conn = db.get_db()
+        cursor = db_conn.execute("SELECT id FROM users WHERE email = ?", (email,))
         if cursor.fetchone():
             flash('This email is already registered', 'danger')
             return redirect(url_for('register') + "#modal-overlay")
 
         pw_hash = generate_password_hash(pw)
-        db.execute(
+        db_conn.execute(
             "INSERT INTO users (email, password_hash) VALUES (?, ?)",
             (email, pw_hash)
         )
-        db.commit()
+        db_conn.commit()
 
         flash('Account created.', 'success')
         return redirect(url_for('login') + "#modal-overlay")
@@ -87,8 +48,8 @@ def login():
         email = form.email.data.strip().lower()
         pw = form.password.data
 
-        db = get_db()
-        cursor = db.execute(
+        db_conn = db.get_db()
+        cursor = db_conn.execute(
             "SELECT id, password_hash FROM users WHERE email = ?", (email,)
         )
         user = cursor.fetchone()
@@ -105,9 +66,9 @@ def login():
 
 @app.route('/cocktails/search/random', methods=['GET'])
 def search_cocktail_rand():
-    db = get_db()
+    db_conn = db.get_db()
     # select random cocktail then join related tables and return as a single list
-    cursor = db.execute("""select c_ingr.id_cocktail,
+    cursor = db_conn.execute("""select c_ingr.id_cocktail,
        c_ingr.cocktail_position,
        c_ingr.measure,
        ingr.name     ingr_name,
