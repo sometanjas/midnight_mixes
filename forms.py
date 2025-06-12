@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length
 
+
 class RegistrationForm(FlaskForm):
     email = StringField(
         'E-Mail',
@@ -43,3 +44,8 @@ class LoginForm(FlaskForm):
         validators=[DataRequired(message="Passwort ist erforderlich")]
     )
     submit = SubmitField('LOG IN')
+
+
+class IngredientSearchForm(FlaskForm):
+    ingr = StringField('Search by Ingredient', validators=[DataRequired()])
+    submit = SubmitField('Search')

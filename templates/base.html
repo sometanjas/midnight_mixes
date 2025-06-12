@@ -15,7 +15,8 @@
   <!-- Basis‐Styles -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 </head>
-<body>
+<!--scrollable body: https://stackoverflow.com/questions/6466344/how-to-make-body-tag-to-adjust-for-scroll-bar-->
+<body style="height: 100vh; overflow:auto;">
   <!-- Banner -->
   <header class="banner">
     <div class="logo-container">

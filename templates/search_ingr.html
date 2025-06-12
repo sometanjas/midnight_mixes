@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Cocktail - Midnight Mixes</title>
+<link rel="stylesheet" href="/static/css/index.css" />
+{% endblock %}
+
+{% block content %}
+<h2>Search Cocktails by Ingredient</h2>
+
+<form method="POST" action="{{ url_for('search_ingr') }}">
+    {{ form.hidden_tag() }}
+    {{ form.ingr.label }}
+    {{ form.ingr(size=32) }}
+    {{ form.submit() }}
+</form>
+
+{% if data.ingr %}
+<h3>Results for "{{ data.ingr }}":</h3>
+{% if data.cocktails %}
+<div class="card">
+    <div style="display: flex; flex-wrap: wrap;">
+        {% for c in data.cocktails %}
+        <div class="card" style="flex: 0 0 33%; padding: 10px; box-sizing: border-box;">
+            <div class="image-container">
+            <img src="/static/images/{{ c.image_path | replace('\\', '/') }}" alt="{{ c.cocktail_name }}" width="300" height="300" />
+            <div class="overlay">{{ c.cocktail_name }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p>No cocktails found for that ingredient.</p>
+{% endif %}
+{% endif %}
+
+{% endblock %}
