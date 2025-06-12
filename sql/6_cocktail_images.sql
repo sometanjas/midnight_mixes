@@ -492,3 +492,5 @@ INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (491, 17831, 'c
 INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (492, 11014, 'cocktail_images\11014.jpg');
 INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (493, 12091, 'cocktail_images\12091.jpg');
 INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (494, 11938, 'cocktail_images\11938.jpg');
+INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (495, 16178, 'cocktail_images\16178.jpg');
+INSERT INTO cocktail_images (id, id_cocktail, image_path) VALUES (496, 178364, 'cocktail_images\178364.jpg');

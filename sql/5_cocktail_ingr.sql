@@ -586,10 +586,6 @@ INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure)
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (590, 12528, 294, 1, '2 oz');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (591, 12528, 86, 2, '1 oz');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (592, 12528, 181, 3, '');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (593, 12618, 263, 4, '');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (594, 12630, 274, 1, '2 tsp');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (595, 12630, 175, 2, '');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (596, 12630, 131, 3, '');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (597, 12706, 186, 1, '4 cl');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (598, 12706, 129, 2, '2 cl');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (599, 12706, 21, 3, '4 cl');
@@ -610,10 +606,8 @@ INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure)
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (614, 12760, 140, 4, '1/2 part');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (615, 12764, 85, 1, '1 part');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (616, 12764, 139, 2, '2 parts');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (617, 12768, 273, 3, '1-2 tsp');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (618, 12772, 166, 1, '2 tsp');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (619, 12772, 85, 2, 'Strong cold');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (620, 12782, 90, 2, '1/4 tsp');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (621, 12790, 294, 1, '1 bottle');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (622, 12790, 273, 2, '50 gr');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (623, 12790, 19, 3, '50 ml pure');
@@ -675,10 +669,6 @@ INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure)
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (683, 12856, 85, 3, '4 tsp');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (684, 12856, 252, 4, '1 cup');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (685, 12856, 289, 5, '4 tsp');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (686, 12862, 175, 4, '1 1/2 tblsp');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (687, 12862, 228, 5, '1 1/2 cup');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (688, 12862, 273, 6, '1 cup');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (689, 12862, 229, 7, '3-4 cups');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (690, 12870, 279, 1, '1 quart black');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (691, 12870, 254, 2, '1 quart');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (692, 12870, 243, 3, '1 fifth');
@@ -1032,7 +1022,6 @@ INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure)
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1050, 15082, 94, 4, '1 oz');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1051, 15086, 92, 1, '1 bottle');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1052, 15086, 33, 2, '1 oz');
-INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1053, 15106, 209, 1, '4 cl');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1054, 15178, 307, 1, '1 part');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1055, 15178, 67, 2, '1/2 part');
 INSERT INTO cocktail_ingr (id, id_cocktail, id_ingr, cocktail_position, measure) VALUES (1056, 15178, 265, 3, '1 part');
