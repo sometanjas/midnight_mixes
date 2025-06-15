@@ -47,5 +47,5 @@ class LoginForm(FlaskForm):
 
 
 class IngredientSearchForm(FlaskForm):
-    ingr = StringField('Search by Ingredient', validators=[DataRequired()])
+    item = StringField('Search by Ingredient', validators=[DataRequired()])
     submit = SubmitField('Search')

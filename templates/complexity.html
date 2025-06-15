@@ -1,10 +1,10 @@
 <!--Used a chatGPT generated template https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab-->
 {% extends "base.html" %}
 
-{% block title %}Home - Midnight Mixes{% endblock %}
+{% block title %}Complexity - Midnight Mixes{% endblock %}
 
 {% block head %}
-<title>Home - Midnight Mixes</title>
+<title>Midnight Mixes</title>
 <link rel="stylesheet" href="/static/css/index.css"/>
 {% endblock %}
 
@@ -15,18 +15,18 @@
 <!--how to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586-->
 <main class="main-content">
     <div class="card">
-        <a href="/cocktails/search/ingredient">
-            <img src="/static/images/card_ingr.png" alt="Cocktail by Ingredient"/>
+        <a href="/cocktails/complexity?level=easy">
+            <img src="/static/images/cocktail_images/11000.jpg" alt="easy"/>
         </a>
     </div>
     <div class="card">
-        <a href="/cocktails/random">
-            <img src="/static/images/card_random.png" alt="Random Cocktail"/>
+        <a href="/cocktails/complexity?level=medium">
+            <img src="/static/images/cocktail_images/11001.jpg" alt="medium"/>
         </a>
     </div>
     <div class="card">
-        <a href="/cocktails/complexity">
-            <img src="/static/images/card_level.png" alt="Cocktail by Level"/>
+        <a href="/cocktails/complexity?level=hard">
+            <img src="/static/images/cocktail_images/11002.jpg" alt="hard"/>
         </a>
     </div>
 </main>

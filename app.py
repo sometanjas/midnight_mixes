@@ -132,23 +132,22 @@ where c_ingr.id_cocktail = ?""", (cocktail_id,))
                 'source': row["snack_source"],
                 '_position': ingr_pos,
             }
-    if data['id_cocktail'] is None:
-        # if a cocktail after cocktail-id not found, e.g. "1"
-        pass # TODO an error page
+    # if data['id_cocktail'] is None:
+    #     # if a cocktail after cocktail-id not found, e.g. "1"
+    #     pass # TODO an error page
     if request.args.get('json') is not None:
         return data
     return render_template("cocktail.html", data=data)
 
 
-# todo: redirect to a specific cocktail after searching for a specific ingredient
 @app.route('/cocktails/search/ingredient', methods=['GET', 'POST'])
 def search_ingr():
     form = IngredientSearchForm()
-    data = {'ingr': '', 'cocktails': []}
+    data = {'item': '', 'cocktails': [], 'search': 'ingredient'}
 
     if form.validate_on_submit():
-        ingr = form.ingr.data.strip().lower()
-        data['ingr'] = ingr
+        ingr = form.item.data.strip().lower()
+        data['item'] = ingr
         ingr = "%" + ingr + "%"
         db_conn = db.get_db()
         cursor = db_conn.execute("""
@@ -170,7 +169,46 @@ def search_ingr():
                 'cocktail_name': row['cocktail_name'],
                 'image_path': row['image_path']
             })
-    return render_template("search_ingr.html", form=form, data=data)
+    return render_template("search.html", form=form, data=data)
+
+
+@app.route('/cocktails/complexity', methods=['GET'])
+def complexity():
+    level = request.args.get('level')
+    if level not in ['easy', 'medium', 'hard']:
+        return render_template("complexity.html")
+    data = {'item': '', 'cocktails': [], 'search': 'complexity'}
+    db_conn = db.get_db()
+    levels = [0, 3, 6, 12]
+    lvl = 1
+    if level == "easy":
+        lvl = 1
+    if level == "medium":
+        lvl = 2
+    if level == "hard":
+        lvl = 3
+    cursor = db_conn.execute("""
+    select c_ingr.id_cocktail,
+       count(c_ingr.cocktail_position) level,
+       c.name AS cocktail_name,
+       im.image_path
+from cocktail_ingr as c_ingr
+left join cocktails c ON c.id = c_ingr.id_cocktail
+         left join cocktail_images im on im.id_cocktail = c_ingr.id_cocktail     
+group by c_ingr.id_cocktail
+having level > ? and level <= ?;
+    """, (levels[lvl-1],levels[lvl],))
+    results = cursor.fetchall()
+    data['item'] = level
+    for row in results:
+        data['cocktails'].append({
+            'id_cocktail': row['id_cocktail'],
+            'cocktail_name': row['cocktail_name'],
+            'image_path': row['image_path']
+        })
+    if request.args.get('json') is not None:
+        return data
+    return render_template("search.html", data=data)
 
 
 if __name__ == "__main__":
