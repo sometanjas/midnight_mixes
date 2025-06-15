@@ -64,10 +64,22 @@ def login():
     return render_template("index.html", active="login", form=form)
 
 
-@app.route('/cocktails/search/random', methods=['GET'])
-def search_cocktail_rand():
+@app.route('/cocktails/<cocktail_id_arg>', methods=['GET'])
+def get_cocktail(cocktail_id_arg):
+    if cocktail_id_arg != "random" and not cocktail_id_arg.isnumeric():
+        # https://www.w3schools.com/python/ref_string_isnumeric.asp
+        # provided an unexpected value, e.g. "abc"
+        pass # TODO an error page
+    cocktail_id = cocktail_id_arg
     db_conn = db.get_db()
-    # select random cocktail then join related tables and return as a single list
+    if cocktail_id_arg == "random":
+        # search a random cocktail
+        cursor = db_conn.execute("""select c.id
+        from cocktails c
+        ORDER BY RANDOM()
+        LIMIT 1""")
+        # https://stackoverflow.com/questions/8001109/trying-to-get-one-cells-values-with-mysqldb
+        cocktail_id = cursor.fetchone()[0]
     cursor = db_conn.execute("""select c_ingr.id_cocktail,
        c_ingr.cocktail_position,
        c_ingr.measure,
@@ -87,11 +99,7 @@ from cocktail_ingr as c_ingr
          left join cocktail_images im on im.id_cocktail = c_ingr.id_cocktail
          left join ingredients ingr on ingr.id = c_ingr.id_ingr
          left join snacks s on s.id = ingr.id_snack
-where c_ingr.id_cocktail = (select c.id
-                            from cocktails c
-                                     left join cocktail_images ci on ci.id_cocktail = c.id
-                            ORDER BY RANDOM()
-                            LIMIT 1);""")
+where c_ingr.id_cocktail = ?""", (cocktail_id,))
     c = cursor.fetchall()
     data = {'ingrs': [], 'snack': {}}
     # populating the result dataset for the database rows
@@ -124,7 +132,9 @@ where c_ingr.id_cocktail = (select c.id
                 'source': row["snack_source"],
                 '_position': ingr_pos,
             }
-
+    if data['id_cocktail'] is None:
+        # if a cocktail after cocktail-id not found, e.g. "1"
+        pass # TODO an error page
     if request.args.get('json') is not None:
         return data
     return render_template("cocktail.html", data=data)

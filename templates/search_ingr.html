@@ -23,7 +23,9 @@
         {% for c in data.cocktails %}
         <div class="card" style="flex: 0 0 33%; padding: 10px; box-sizing: border-box;">
             <div class="image-container">
+                <a href="/cocktails/{{c.id_cocktail}}">
             <img src="/static/images/{{ c.image_path | replace('\\', '/') }}" alt="{{ c.cocktail_name }}" width="300" height="300" />
+                </a>
             <div class="overlay">{{ c.cocktail_name }}</div>
             </div>
         </div>
