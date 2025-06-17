@@ -9,11 +9,15 @@
 {% endblock %}
 
 {% block content %}
-
 <link rel="stylesheet" href="/static/css/index.css"/>
-<body>
+
+<div class="top-bar">
+    <a href="{{ url_for('index') }}">
+      <button class="back-btn">&#8592;</button>
+    </a>
+  </div>
 <!--how to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586-->
-<main class="main-content">
+<main class="main-content">    
     <div class="card">
         <a href="/cocktails/complexity?level=easy">
             <img src="/static/images/cocktail_images/11000.jpg" alt="easy"/>
@@ -30,5 +34,4 @@
         </a>
     </div>
 </main>
-</body>
 {% endblock %}
