@@ -17,8 +17,13 @@
             <button class="back-btn">&#8592;</button>
         </a>
         <h1>{{ data["name"] }}</h1>
-<!--        TODO: like a cocktail-button-->
-        <button class="heart-btn">&#10084;</button>
+        {% if session.get('user_id') %}
+        <form method="POST" action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}" style="display: inline;">
+            <button type="submit" class="heart-button">❤</button>
+        </form>
+        {% else %}
+        <a href="{{ url_for('login') }}#modal-overlay" class="heart-button" title="Bitte einloggen zum Liken">🤍</a>
+        {% endif %}
     </div>
 
     <div class="content">

@@ -8,7 +8,6 @@ app.secret_key = "secret_key_just_for_dev_environment"  # für CSRF nötig
 
 import db
 
-
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -216,6 +215,24 @@ having level > ? and level <= ?;
     if request.args.get('json') is not None:
         return data
     return render_template("search.html", data=data)
+
+
+@app.route('/cocktails/<int:cocktail_id>/like', methods=['POST'])
+def like_cocktail(cocktail_id):
+    if 'user_id' not in session:
+        flash("Log in to like cocktails.", "warning")
+        return redirect(url_for("login") + "#modal-overlay")
+
+    user_id = session['user_id']
+    db_conn = db.get_db()
+
+    db_conn.execute("""
+        INSERT OR IGNORE INTO cocktail_likes (user_id, cocktail_id)
+        VALUES (?, ?)
+    """, (user_id, cocktail_id))
+    db_conn.commit()
+    flash("Cocktail liked!", "success")
+    return redirect(url_for('get_cocktail', cocktail_id_arg=cocktail_id))
 
 
 if __name__ == "__main__":
