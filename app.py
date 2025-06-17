@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, request, url_for, flash
+from flask import Flask, render_template, redirect, request, url_for, flash, session
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegistrationForm, LoginForm, IngredientSearchForm
 
@@ -55,14 +55,21 @@ def login():
         user = cursor.fetchone()
 
         if not user or not check_password_hash(user["password_hash"], pw):
-            flash("Ungültige E-Mail oder Passwort", 'danger')
+            flash("Incorrect E-Mail or Password", 'danger')
             return redirect(url_for('login') + "#modal-overlay")
-
+        
+        #User sessions: https://testdriven.io/blog/flask-sessions/
+        session['user_id'] = user["id"]
         flash("Login successful!", 'success')
         return redirect(url_for('index'))
 
     return render_template("index.html", active="login", form=form)
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash("Logged out", "info")
+    return redirect(url_for("index"))
 
 @app.route('/cocktails/<cocktail_id_arg>', methods=['GET'])
 def get_cocktail(cocktail_id_arg):

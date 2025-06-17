@@ -28,11 +28,10 @@
     <nav class="banner-nav">
       <a href="{{ url_for('index') }}" class="nav-btn">HOME</a>
       {% if session.get('user_id') %}
-        <!-- TODO: Route hinzufügen -->
-        <a href="{{ url_for('index') }}" class="nav-btn heart-btn">❤</a>
+        <a href="#" class="nav-btn">❤</a>
         <a href="{{ url_for('logout') }}" class="nav-btn">LOG OUT</a>
       {% else %}
-        <a href="register#modal-overlay" class="nav-btn">LOG IN</a>
+        <a href="{{ url_for('login') }}#modal-overlay" class="nav-btn">LOG IN</a>
       {% endif %}
     </nav>
   </header>
