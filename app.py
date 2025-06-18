@@ -234,6 +234,34 @@ def like_cocktail(cocktail_id):
     flash("Cocktail liked!", "success")
     return redirect(url_for('get_cocktail', cocktail_id_arg=cocktail_id))
 
+@app.route('/my-likes')
+def my_likes():
+    #herz sollte eigendlich sowieso nur sichbar sein wenn eingeloggt
+    if 'user_id' not in session:
+        flash("Log in to view likes.", "warning")
+        return redirect(url_for('login') + "#modal-overlay")
+
+    user_id = session['user_id']
+    db_conn = db.get_db()
+    cursor = db_conn.execute("""
+        SELECT c.id AS id_cocktail, c.name AS cocktail_name, im.image_path
+        FROM cocktail_likes l
+        JOIN cocktails c ON l.cocktail_id = c.id
+        LEFT JOIN cocktail_images im ON im.id_cocktail = c.id
+        WHERE l.user_id = ?
+    """, (user_id,))
+    liked_cocktails = cursor.fetchall()
+
+    data = {
+        'cocktails': [{
+            'id_cocktail': row['id_cocktail'],
+            'cocktail_name': row['cocktail_name'],
+            'image_path': row['image_path']
+        } for row in liked_cocktails],
+        'search': 'likes'
+    }
+    return render_template("likes.html", data=data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

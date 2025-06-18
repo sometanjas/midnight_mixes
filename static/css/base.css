@@ -71,4 +71,41 @@
   .content {
     padding: 24px;
   }
+
+  .heading {
+    text-align: center;
+    margin-top: 2rem;
+    color: #f0eadc;
+  }
+  
+  .cocktail-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  .cocktail-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: center;
+    background-color: #f0eadc;
+  }
+
+  .cocktail-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .cocktail-name {
+    font-weight: bold;
+    color:#000;
+  }
+  
   

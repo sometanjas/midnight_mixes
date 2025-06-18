@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Meine Likes{% endblock %}
+
+{% block content %}
+  <h2 class="heading">Liked Cocktails</h2>
+
+  {% if data.cocktails %}
+    <div class="cocktail-grid">
+      {% for cocktail in data.cocktails %}
+        <div class="cocktail-card">
+          <a href="{{ url_for('get_cocktail', cocktail_id_arg=cocktail.id_cocktail) }}">
+            <img src="/static/images/{{ cocktail.image_path | replace('\\', '/') }}" alt="{{ cocktail.cocktail_name }}" class="cocktail-image" />
+            <p class="cocktail-name">{{ cocktail.cocktail_name }}</p>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No liked cocktails yet.</p>
+  {% endif %}
+{% endblock %}
