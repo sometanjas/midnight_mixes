@@ -13,16 +13,14 @@
 <body>
 <main class="container">
     <div class="top-bar">
-        <a href="{{ url_for('index') }}">
-            <button class="back-btn">&#8592;</button>
-        </a>
-        <h1>{{ data["name"] }}</h1>
+        <button class="back-btn" onclick="window.history.back()">←</button>
+        <h1>{{ data.name }}</h1>
         {% if session.get('user_id') %}
-        <form method="POST" action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}" style="display: inline;">
-            <button type="submit" class="heart-button">❤</button>
-        </form>
+            <form method="POST" action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}">
+            <button type="submit" class="heart-icon {% if is_liked %}liked{% endif %}" title="Like"></button>
+            </form>
         {% else %}
-        <a href="{{ url_for('login') }}#modal-overlay" class="heart-button" title="Bitte einloggen zum Liken">🤍</a>
+            <a href="{{ url_for('login') }}#modal-overlay" class="heart-icon" title="Bitte einloggen zum Liken"></a>
         {% endif %}
     </div>
 

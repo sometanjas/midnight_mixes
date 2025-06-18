@@ -81,3 +81,27 @@ body {
 .card li {
     margin-bottom: 0.3rem;
 }
+
+.heart-icon {
+    width: 36px;
+    height: 36px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-image: url("/static/images/heart_white.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    filter: brightness(0.95);
+    position: static;
+    margin-left: auto;
+  }
+  
+  .heart-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  .heart-icon.liked {
+    background-image: url("/static/images/heart_red.png");
+  }
+  
