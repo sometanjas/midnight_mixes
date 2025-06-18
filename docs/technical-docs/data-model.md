@@ -59,16 +59,17 @@ Speichert den Pfad zu den Cocktail-Images auf dem lokalen Dateisystem.
 
 [Julia K.]
 
-## Users
+## User & Likes
 
 Status
-: **Work in progress** - Decided - Obsolete
+: Work in progress - **Decided** - Obsolete
 
-Dieses Datenmodell dient der strukturierten Speicherung von Informationen zu Users und deren geliketen Cocktails.
+Dieses Datenmodell dient der Speicherung von Informationen zu den Nutzern der Plattform. Es ermöglicht die Verwaltung von Benutzerprofilen und deren Likes auf der Website.
 
+### Tabelle users
 
+Beinhaltet Informationen zu den Nutzern: ID, E-Mail-Adresse, Passwort-Hash. 
 
+### Tabelle cocktail_likes
 
-
-
-[Visualize and describe the data model(s) of your application. This description should match the actual implementation.]
+Speichert die Beziehung zwischen Nutzern und den Cocktails, die sie mit einem Like markiert habe (user_id, cocktail_id). Dies ermöglicht angemeldeten Nutzern diese Cocktails wiederzufinden. 
