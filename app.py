@@ -143,7 +143,15 @@ where c_ingr.id_cocktail = ?""", (cocktail_id,))
     #     pass # TODO an error page
     if request.args.get('json') is not None:
         return data
-    return render_template("cocktail.html", data=data)
+    #like herz
+    is_liked = False
+    if 'user_id' in session:
+        cursor = db_conn.execute("""
+            SELECT 1 FROM cocktail_likes
+            WHERE user_id = ? AND cocktail_id = ?
+        """, (session['user_id'], cocktail_id))
+        is_liked = cursor.fetchone() is not None
+    return render_template("cocktail.html", data=data, is_liked=is_liked)
 
 
 @app.route('/cocktails/search/ingredient', methods=['GET', 'POST'])
@@ -223,16 +231,29 @@ def like_cocktail(cocktail_id):
         flash("Log in to like cocktails.", "warning")
         return redirect(url_for("login") + "#modal-overlay")
 
-    user_id = session['user_id']
     db_conn = db.get_db()
+    user_id = session['user_id']
 
-    db_conn.execute("""
-        INSERT OR IGNORE INTO cocktail_likes (user_id, cocktail_id)
-        VALUES (?, ?)
+    cursor = db_conn.execute("""
+        SELECT 1 FROM cocktail_likes WHERE user_id = ? AND cocktail_id = ?
     """, (user_id, cocktail_id))
+
+    if cursor.fetchone():
+        # Bereits geliked dann entfernen
+        db_conn.execute("""
+            DELETE FROM cocktail_likes WHERE user_id = ? AND cocktail_id = ?
+        """, (user_id, cocktail_id))
+        flash("Like entfernt!", "info")
+    else:
+        # Noch nicht geliked dann hinzufügen
+        db_conn.execute("""
+            INSERT INTO cocktail_likes (user_id, cocktail_id) VALUES (?, ?)
+        """, (user_id, cocktail_id))
+        flash("Cocktail liked!", "success")
+
     db_conn.commit()
-    flash("Cocktail liked!", "success")
     return redirect(url_for('get_cocktail', cocktail_id_arg=cocktail_id))
+
 
 @app.route('/my-likes')
 def my_likes():
