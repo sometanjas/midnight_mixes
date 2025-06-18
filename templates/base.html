@@ -50,7 +50,9 @@
       {% endif %}
     {% endwith %}
   </div>
-
+  <!--https://jinja.palletsprojects.com/en/stable/templates/-->
+  <!--https://flask.palletsprojects.com/en/stable/patterns/flashing/-->
+  {% if active %}
   <div id="modal-overlay">
     <div id="modal-container">
 
@@ -113,9 +115,9 @@
           </form>
         {% endif %}
       </div>
-
     </div>
   </div>
+  {% endif %}
 </body>
 </html>
 
