@@ -27,7 +27,7 @@ aufwenden, wenn sie schon wissen, welche Cocktails sie haben möchten, und gleic
 
 Wir bieten eine Plattform an, die jungen Erwachsenen eine stilvolle und intuitive Sammlung von Cocktails und Snacks bereitstellt. Die Plattform umfasst eine breite Auswahl von bekannten bis hin zu weniger bekannten Getränken und wird mit sorgfältig abgestimmten Empfehlungen für passende Snacks ergänzt.
 
-Die Suche nach Zutaten und Cocktails-Namen soll den Nutzern Zeit und Aufwand sparen. Ebenfalls wird die Webseite einen Service für unentschiedene Nutzer anbieten, indem sie ein zufällig gewähltes Rezept und dazu passenden Snack anbietet. Nutzer haben auch die Möglichkeit einen Account zu erstellen, um die Like-Funktion zu nutzen. Sie ermöglicht es, Rezepte schnell wiederzufinden.
+Die Suche nach Zutaten und Komplexität der Rezepte soll den Nutzern Zeit und Aufwand sparen. Ebenfalls wird die Webseite einen Service für unentschiedene Nutzer anbieten, indem sie ein zufällig gewähltes Rezept und dazu passenden Snack anbietet. Nutzer haben auch die Möglichkeit einen Account zu erstellen, um die Like-Funktion zu nutzen. Sie ermöglicht es, Rezepte schnell wiederzufinden.
 
 ## Target user
 

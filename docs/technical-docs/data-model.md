@@ -72,4 +72,6 @@ Beinhaltet Informationen zu den Nutzern: ID, E-Mail-Adresse, Passwort-Hash.
 
 ### Tabelle cocktail_likes
 
-Speichert die Beziehung zwischen Nutzern und den Cocktails, die sie mit einem Like markiert habe (user_id, cocktail_id). Dies ermöglicht angemeldeten Nutzern diese Cocktails wiederzufinden. 
+Speichert die Beziehung zwischen Nutzern und den Cocktails, die sie mit einem Like markiert haben (user_id, cocktail_id). Dies ermöglicht angemeldeten Nutzern diese Cocktails wiederzufinden. 
+
+![user_cocktail_relation_diagram.jpg](../user_cocktail_relation_diagram.jpg)
