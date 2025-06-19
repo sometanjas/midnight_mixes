@@ -1,0 +1,3 @@
+INSERT INTO users (email, password_hash) VALUES ('julia@gmail.com', 'scrypt:32768:8:1$MLhcS52jsjsurqMZ$7a6383cf7f04e5c1fbcaba44964a5550de2aa49865fe36ba7c92af7e0f70a722e46754267573588e9d5985e677636409901173cddf4bb7ef339d91deaa6da493');
+INSERT INTO users (email, password_hash) VALUES ('tatjana@gmail.com', 'scrypt:32768:8:1$A4mxmURee1gfpCrk$0beb04945bf16a5bc0822bf4bf9ec5673d05f6c760ddd68ba85c756962c5d1b5bafb578affe8fd96e35e4eb4bb4d5b4e7059f01c668e708d2a743274c08c3fc2');
+INSERT INTO users (email, password_hash) VALUES ('test@gmail.com', 'scrypt:32768:8:1$CLg7kurTRVGOrGUF$33cc6b5f05bfd6593e6be34faff7c41b0aa43e0c43a00c83172e4a4cf91605f41c608222031227e65c25b2dd9d2966a2651e64f9563fae625efb50a41d80fa95');
