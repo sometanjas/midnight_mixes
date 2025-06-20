@@ -2,41 +2,39 @@
 
 {% block head %}
 <title>Cocktail - Midnight Mixes</title>
-<link rel="stylesheet" href="/static/css/index.css" />
 {% endblock %}
 
 {% block content %}
-<h2>Search Cocktails by Ingredient</h2>
-
+<link rel="stylesheet" href="/static/css/index.css" />
+<div class="top-bar">
+    <!--https://www.w3schools.com/jsref/met_his_back.asp-->
+      <button class="back-btn" onclick="window.history.back()">←</button>
+  </div>
 {% if 'ingredient' in data.search %}
-<form method="POST" action="{{ url_for('search_ingr') }}">
+<form method="POST" action="{{ url_for('search_ingr') }}" class="search-form">
     {{ form.hidden_tag() }}
     {{ form.item.label }}
-    {{ form.item(size=32) }}
-    {{ form.submit() }}
+    {{ form.item(class="search-input") }}
+    {{ form.submit(class='btn-red') }}
 </form>
 {% endif %}
 
 {% if data.item %}
 <h3>Results for "{{ data.item }}":</h3>
 {% if data.cocktails %}
-<div class="card">
-    <div style="display: flex; flex-wrap: wrap;">
-        {% for c in data.cocktails %}
-        <div class="card" style="flex: 0 0 33%; padding: 10px; box-sizing: border-box;">
-            <div class="image-container">
-                <a href="/cocktails/{{c.id_cocktail}}">
-            <img src="/static/images/{{ c.image_path | replace('\\', '/') }}" alt="{{ c.cocktail_name }}" width="300" height="300" />
-                </a>
-            <div class="overlay">{{ c.cocktail_name }}</div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+<div class="cocktail-grid">
+  {% for c in data.cocktails %}
+  <div class="cocktail-card">
+    <a href="/cocktails/{{ c.id_cocktail }}">
+      <img src="/static/images/{{ c.image_path | replace('\\', '/') }}"
+           alt="{{ c.cocktail_name }}" class="cocktail-image" />
+      <p class="cocktail-name">{{ c.cocktail_name }}</p>
+    </a>
+  </div>
+  {% endfor %}
 </div>
 {% else %}
 <p>No cocktails found for that ingredient.</p>
 {% endif %}
 {% endif %}
-
 {% endblock %}
