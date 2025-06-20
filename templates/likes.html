@@ -2,8 +2,12 @@
 {% block title %}Meine Likes{% endblock %}
 
 {% block content %}
+<div class="top-bar">
+    <!--https://www.w3schools.com/jsref/met_his_back.asp-->
+      <button class="back-btn" onclick="window.history.back()">←</button>
+  </div>
+  <link rel="stylesheet" href="/static/css/index.css"/>
   <h2 class="heading">Liked Cocktails</h2>
-
   {% if data.cocktails %}
     <div class="cocktail-grid">
       {% for cocktail in data.cocktails %}
