@@ -28,17 +28,23 @@
     <div class="content">
         <div class="left-column">
             <div class="card gray-card">
-<!--                https://stackoverflow.com/questions/33355159/how-can-i-dynamically-render-images-from-my-images-folder-using-jinja-and-flask-->
-<!--                https://stackoverflow.com/questions/62633371/jinja-replace-special-char-->
-                <img src="/static/images/{{ data.image_path | replace('\\', '/') }}" alt="{{ data.name }}" />
+            <div class="ingredients-container">
+            <!--https://stackoverflow.com/questions/33355159/how-can-i-dynamically-render-images-from-my-images-folder-using-jinja-and-flask-->
+            <!--https://stackoverflow.com/questions/62633371/jinja-replace-special-char-->
+                <img src="/static/images/{{ data.image_path | replace('\\', '/') }}"
+                    alt="{{ data.name }}" />
+                <!--https://chatgpt.com/share/685558f3-79dc-800d-8254-af660e6e63d7-->
+                <!-- Zutaten rechts neben dem Bild -->
+                <div class="ingredients-list">
                 <h3>INGREDIENTS</h3>
                 <ul>
                     {% for ingr in data.ingrs %}
                     <li>{{ ingr.measure }} {{ ingr.ingr_name }}</li>
                     {% endfor %}
                 </ul>
+                </div>
             </div>
-
+            </div>
             <div class="card gray-card">
                 <h3>INSTRUCTIONS</h3>
                 <p>
