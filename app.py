@@ -75,7 +75,7 @@ def get_cocktail(cocktail_id_arg):
     if cocktail_id_arg != "random" and not cocktail_id_arg.isnumeric():
         # https://www.w3schools.com/python/ref_string_isnumeric.asp
         # provided an unexpected value, e.g. "abc"
-        pass # TODO an error page
+        return render_template("error.html")
     cocktail_id = cocktail_id_arg
     db_conn = db.get_db()
     if cocktail_id_arg == "random":
@@ -107,6 +107,9 @@ from cocktail_ingr as c_ingr
          left join snacks s on s.id = ingr.id_snack
 where c_ingr.id_cocktail = ?""", (cocktail_id,))
     c = cursor.fetchall()
+    if len(c) == 0:
+        # if a cocktail after cocktail-id not found, e.g. "1"
+        return render_template("error.html")
     data = {'ingrs': [], 'snack': {}}
     # populating the result dataset for the database rows
     for row in c:
@@ -138,9 +141,6 @@ where c_ingr.id_cocktail = ?""", (cocktail_id,))
                 'source': row["snack_source"],
                 '_position': ingr_pos,
             }
-    # if data['id_cocktail'] is None:
-    #     # if a cocktail after cocktail-id not found, e.g. "1"
-    #     pass # TODO an error page
     if request.args.get('json') is not None:
         return data
     #like herz
@@ -189,8 +189,10 @@ def search_ingr():
 @app.route('/cocktails/complexity', methods=['GET'])
 def complexity():
     level = request.args.get('level')
-    if level not in ['easy', 'medium', 'hard']:
+    if level == 'start':
         return render_template("complexity.html")
+    if level not in ['easy', 'medium', 'hard']:
+        return render_template("error.html")
     data = {'item': '', 'cocktails': [], 'search': 'complexity'}
     db_conn = db.get_db()
     levels = [0, 3, 6, 12]
