@@ -10,12 +10,6 @@ nav_order: 3
 {: .no_toc }
 # Reference documentation
 
-{: .attention }
-> This page collects internal functions, routes with their functions, and APIs (if any).
-> 
-> See [Uber](https://developer.uber.com/docs/drivers/references/api) or [PayPal](https://developer.paypal.com/api/rest/) for exemplary high-quality API reference documentation.
->
-> You may delete this `attention` box.
 
 <details open markdown="block">
 {: .text-delta }
@@ -40,46 +34,51 @@ nav_order: 3
 
 ---
 
-## [Example, delete this section] Show to-do lists
 
-### `get_lists()`
+### `get_cocktail(cocktail_id_arg)`
 
-**Route:** `/lists/`
+**Route:** `/cocktails/<cocktail_id_arg>`
 
 **Methods:** `GET`
 
-**Purpose:** Show all to-do lists.
+**Purpose:**  
+Gibt ein Page mit einem einzigen Cocktail mit einer ID.  
+Ebenso `<cocktail_id_arg>` kann den Wert `random` annehmen und damit einen Random-Cocktail zeigen.
 
 **Sample output:**
 
-![get_lists() sample](../assets/images/fswd-intro_00.png)
+![get-cocktail-sample.png](images/get-cocktail-sample.png)
+![get-a-random-cocktail.png](images/get-a-random-cocktail.png)
 
 ---
 
-### `get_list_todos(list_id)`
+### `search_ingr()`
 
-**Route:** `/lists/<int:list_id>`
+**Route:** `/cocktails/search/ingredient`
 
-**Methods:** `GET`
+**Methods:** `GET`, `POST`
 
-**Purpose:** Retrieve all to-do items of to-do list with ID `list_id` from database and present to user.
+**Purpose:**   
+Suche nach einem Cocktails-Ingredient.
 
 **Sample output:**
 
-![get_list_todos() sample](../assets/images/fswd-intro_02.png)
+![search-ingr.png](images/search-ingr.png)
+![search-specific-ingr.png](images/search-specific-ingr.png)
 
 ---
 
 ## [Example, delete this section] Insert sample data
 
-### `run_insert_sample()`
+### `complexity()`
 
-**Route:** `/insert/sample`
+**Route:** `/cocktails/complexity`
 
 **Methods:** `GET`
 
-**Purpose:** Flush the database and insert sample data set
+**Purpose:** Zeigt eine Menü-Page für die Schwirigkeitsgrade (Complexity Levels) 
 
 **Sample output:**
 
-Browser shows: `Database flushed and populated with some sample data.`
+![complexity-page.png](images/complexity-page.png)
+![complexity-hard.png](images/complexity-hard.png)
