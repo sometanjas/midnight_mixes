@@ -268,3 +268,47 @@ Pro:
 Contra:
 1) Kaum Kontrolle über Datenstruktur oder Erweiterungen (z.B. für Likes).
 2) Abhängigkeit von Dritten.
+
+
+## 07: Nutzung von SQLAlchemy
+
+### Meta
+
+Status
+: Work in progress - **Decided** - Obsolete
+
+Updated
+: 19-Juni-2025
+
+### Problem statement
+
+In unserem Projekt arbeiten wir mit Datenbanken. Unsere Daten befinden sich in der SQLite-Datenbank. Wir müssen über die Flask-App einen Zugriff auf die Datenbank erhalten. 
+
+Es gibt zwei Möglichkeiten für unser Projekt, dies zu tun:
+- SQLAlchemy verwenden, um auf die Daten zuzugreifen;
+- direkte SQL-Abfragen verwenden, um auf die Daten zuzugreifen.
+
+### Decision
+
+Wir nutzen direkte SQL-Anfragen.
+
+Diese Entscheidung wurde von Julia K. und Tatjana K. getroffen.
+
+### Regarded options
+
+**Nutzung von direkten SQL-Anfragen**
+
+Vorteile:
+- Es ist nicht notwendig, den Code an SQLAlchemy anzupassen.
+
+Nachteile:
+- erfordert tiefgreifende SQL-Kenntnisse von SQL
+
+**Nutzung von SQLAlchemy**
+
+Vorteile:
+- Nutzung von Python-Methoden/Funktionen
+
+Nachteile:
+- Code muss angepasst werden, was zeitintensiv ist.
+- mögliche Fehler beim Anpassen an SQLAlchemy
