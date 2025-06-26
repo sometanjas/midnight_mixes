@@ -68,10 +68,10 @@ Dieses Datenmodell dient der Speicherung von Informationen zu den Nutzern der Pl
 
 ### Tabelle users
 
-Beinhaltet Informationen zu den Nutzern: ID, E-Mail-Adresse, Passwort-Hash. 
+Beinhaltet Informationen zu den Nutzern: ID, E-Mail-Adresse, Passwort-Hash. Die E-Mail-Adresse ist dabei unique, also kann ein Nutzer sich nicht mehrmals mit der gleichen E-Mail registrieren. 
 
 ### Tabelle cocktail_likes
 
-Speichert die Beziehung zwischen Nutzern und den Cocktails, die sie mit einem Like markiert haben (user_id, cocktail_id). Dies ermöglicht angemeldeten Nutzern diese Cocktails wiederzufinden. 
+Diese Tabelle wird benötigt, da die gelikten Cocktails mit den Usern eine n:n Beziehung haben. Ein User kann mehrere Cocktails liken und ein Cocktails kann von mehreren Usern geliked werden. Die Tabelle speichert genau diese Beziehung zwischen Nutzern und den Cocktails: user_id, cocktail_id. Es ermöglicht den angemeldeten Nutzern ihre gelikten Cocktails wiederzufinden.  
 
 ![user_cocktail_relation_diagram.jpg](../user_cocktail_relation_diagram.jpg)

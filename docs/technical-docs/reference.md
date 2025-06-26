@@ -22,7 +22,7 @@ nav_order: 3
 
 ## Auth / User Management
 
-### register()
+### `register()`
 
 **Route:** `/register`
 
@@ -40,7 +40,7 @@ Bei POST wird überprüft, ob die E-Mail bereits in der DB existiert. Wenn nicht
 
 ---
 
-### login()
+### `login()`
 
 **Route:** `/login`
 
@@ -58,7 +58,7 @@ Bei POST werden E-Mail und Passwort validiert: Existiert der Nutzer nicht oder i
 
 ---
 
-### logout()
+### `logout()`
 
 **Route:** `/logout>`
 
@@ -70,7 +70,7 @@ Bei POST werden E-Mail und Passwort validiert: Existiert der Nutzer nicht oder i
 
 Flash-Message: "Logged out"
 
-## Cocktail Page
+## `Cocktail Page`
 
 ### `get_cocktail(cocktail_id_arg)`
 
@@ -122,7 +122,7 @@ Suche nach einem Cocktails-Ingredient.
 
 ## Likes
 
-### like_cocktail(cocktail_id)
+### `like_cocktail(cocktail_id)`
 
 **Route:** `/cocktails/<int:cocktail_id>/like`
 
@@ -138,7 +138,7 @@ War noch kein Like gesetzt, wird ein neuer Eintrag in der Tabelle cocktail_likes
 
 ---
 
-### my_likes()
+### `my_likes()`
 
 **Route:** `/my-likes`
 
