@@ -27,6 +27,10 @@ nav_order: 1
 
 ## Julias Ziele
 
+- Kenntnisse in python vertiefen - `achieved`
+- Mit Visual Studio Code und GitHub vertraut machen - `achieved`
+- Um eine strukturierte und kooperative Zusammenarbeit bemühen - `achieved`
+- Visuell ansprechendes und benutzerfreundliches UI Design erstellen und dabei die Prinzipien des Design Thinkings berücksichtigen - `achieved`
 
 
 ## Tatjanas Ziele

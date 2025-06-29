@@ -37,12 +37,12 @@ Ich wünsche mir, dass Julia ihre klare Kommunikation, Verlässlichkeit und prof
 
 ### My observation (Wahrnehmung)
 
-
+Tatjana hat immer sehr verlässlich, professionell und strukturiert gearbeitet. Sie hat klare Ziele für die einzelnen Arbeitsphasen definiert und stets mit mir abgesprochen. Die kommunikation lief Problemlos, und ich konnte mich jederzeit auf schnelle Antworten von Tatjana verlassen. Sie konnte mir immer helfen, wenn ich Unterstützung gabraucht habe. Besonders hilfreich für mich war, dass sie viel im Bereich Cocktail-DB übernommen hat und mir alle Schritte detailliert erklärt und mit mir abgesprochen hat.
 
 ### Effect on me (Wirkung)
 
-
+Ich empfand dass Tatjana mehr Vorkenntnise für dieses Projekt hatte als ich. Somit konnte ich durch unsere Zusammenarbeit viele neue Fähigkeiten und Fachkenntnisse erlernen, die mir im weiteren Studienverlauf von großem Nutzen sein werden. Durch das klare Definieren der Aufagben und Ziele sowie die regelmäßigen Besprechungen war ich sehr motiviert an dem Projekt zu arbeiten. Ebesno hat sie dafür gesorgt, dass wir stets im Zeitplan blieben.  
 
 ### Tip for the future (Wunsch)
 
-
+In der Zukunft würde ich mir für Tatjana wünschen, dass sie ihre Verlässlichkeit, ihre ausgeprägte Planungsfähigkeit, Strukturierte Arbeitsweise und klare Kommunikation genauso bei zukünftigen Projekten beibehällt. Aus meiner Sicht hat sie mich im Team optimal ergänzt. Somit denke ich nicht, dass sie in Zukunft etwas anders machen sollte. 
