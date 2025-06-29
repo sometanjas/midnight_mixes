@@ -70,7 +70,7 @@ Bei POST werden E-Mail und Passwort validiert: Existiert der Nutzer nicht oder i
 
 Flash-Message: "Logged out"
 
-## `Cocktail Page`
+## Cocktail Page
 
 ### `get_cocktail(cocktail_id_arg)`
 
@@ -135,6 +135,8 @@ Prüft, ob der Nutzer in der Session ist. Andernfalls wird er zur Login-Seite we
 War noch kein Like gesetzt, wird ein neuer Eintrag in der Tabelle cocktail_likes angelegt. Existiert bereits ein Like, wird dieser gelöscht. 
 
 **Sample output:**
+
+![like-cocktail-sample.png](images/like-cocktail-sample.png)
 
 ---
 
