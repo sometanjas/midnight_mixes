@@ -132,8 +132,8 @@ where c_ingr.id_cocktail = ?""", (cocktail_id,))
         if snack_name is None:
             continue
         # curr_snack_pos is None - the initial value. In that case save the snack since there is nothing to compare
-        # curr_snack_pos > curr_snack_pos - overwrite snack if its related ingredients' position is less
-        if curr_snack_pos is None or curr_snack_pos > curr_snack_pos:
+        # curr_snack_pos > ingr_pos - overwrite snack if its related ingredients' position is less
+        if curr_snack_pos is None or curr_snack_pos > ingr_pos:
             data['snack'] = {
                 'name': snack_name,
                 'content': row["snack_content"],
