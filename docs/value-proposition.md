@@ -33,6 +33,9 @@ Die Suche nach Zutaten und Komplexität der Rezepte soll den Nutzern Zeit und Au
 
 Young adults (18+) mit Affinität zu digitalen Medien.
 
+{: .label }
+[Julia K.]
+
 ## Customer journey
 
-[Illustrate the customer journey, from the app's entry point to a completed task. You might want to show the customer journey as (schematic) screen flows.]
+![customer-journey.jpg](customer-journey.jpg)
