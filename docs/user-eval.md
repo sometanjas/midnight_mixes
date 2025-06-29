@@ -4,7 +4,7 @@ nav_order: 4
 ---
 
 {: .label }
-[Jane Dane]
+[Julia K.]
 
 {: .no_toc }
 # User evaluation
@@ -16,30 +16,73 @@ nav_order: 4
 {: toc }
 </details>
 
-## 01: [Title]
+## 01: Login
 
 ### Meta
 
 Status
-: **Work in progress** - Done - Obsolete
+: Work in progress - **Done** - Obsolete
 
 Updated
-: DD-MMM-YYYY
+: 29-06-2015
 
 ### Goal
 
-[Describe the goal of this evaluation, for example as a research question like: "How long does it take to register a new account and what is the drop-out rate?"]
+Unser Ziel ist es herauszufinden wie lange ein Nutzer braucht, um sich zu registrieren bzw. anzumelden, und ob sich dieser Vorgang vereinfachen lässt.
 
 ### Method
 
-[Describe how you proceed to achieve your evaluation goal. Be as specific as possible: others should be able to replicate your evaluation by following the description on this section.]
+Wir haben zwei Testpersonen (weiblich, 19 und 21 Jahre alt) darum gebeten sich einen Account auf unserer Webseite zu erstellen. Dazu erhielten sie ein Gerät von uns, wo die Webapp schon gestartet war. Wir schauten im Anschluss beim Registrierungsprozess und Login zu. 
 
 ### Results
 
-[Present the main results of your evaluation, for example: "On average, users need 3 min to register. The drop-out rate was 70%. Users that didn't complete provided the following reasons: ..."]
+Dauer: Beide Nutzerinnen brauchten ungefähr 1–2 Minuten.
+
+Ablauf: Registrierung und anschließender Login funktionierten technisch einwandfrei.
+
+Hürde: Der erneute Login nach der Registrierung verlängert den Prozess unnötig.
 
 ### Implications
 
-[What did you learn from this evaluation and what will you change to improve? Example: "We aim to decrease the drop-out rate by not asking for a birth date. We will re-run this evaluation to measure the impact."]
+Um die Nutzererfahrung zu optimieren, sollte der Nutzer nach erfolgreicher Registrierung automatisch eingeloggt werden. Dies spart Zeit und reduziert Frustration.  
 
 ---
+
+## 02: Cocktail search & like
+
+### Meta
+
+Status
+: Work in progress - **Done** - Obsolete
+
+Updated
+: 29-06-2015
+
+### Goal
+
+Wir wollten prüfen, ob Nutzer schnell und intuitiv ein neues Cocktail-Rezept finden, die Like-Funktion nutzen und die Such- bzw. Filtermöglichkeiten als hilfreich empfinden.
+
+### Method
+
+Wir haben die beiden Nutzerinnen darum gebeten, sich vorzustellen sie wären auf der Suche nach einem Cocktail-Rezept und einem dazu passenden Snack. Das Cocktail-Rezept soll für sie etwas neues sein, was sie noch nicht kennen aber dennoch gerne ausprbieren wurden. Dazu haben sie weiterhin unser Gerät genutzt.  
+
+Nach dem Login erkundeten sie eigenständig alle unsere Features: Random Cocktail, Filter by Ingredient, Filter by Level,Like-Funktion. 
+
+### Results
+
+Random Cocktail: Beide fanden die Zufallsfunktion spannend und testeten sie mehrfach.
+
+Like-Funktion: Nutzerin A markierte diverse Cocktails mit einem Like. 
+
+Filter by Ingredient: Nutzerin A schaute sich anschließend die Ergebnise für mehrere verschedene Zutaten an und speicherte weitere Rezepte.
+
+Zum Schluss wählte sie ein Rezept aus ihren Likes. 
+
+Filter by Level: Nutzerin B nutzte den Schwierigkeitsgrad-Filter und wählte ein Rezept aus der Kategorie „Easy“.
+
+Testperson A benötigte unegfähr 10 Minuten, Testperson B unegfähr 3 Minuten.
+
+### Implications 
+
+An den Tests haben wir erkannt, dass die Like-Funktion entscheidend ist, um Rezepte für später zu speichern und die Auswahl zu erleichtern. Der Complexity-Filter unterstützt bei der Suche nach sehr einfachen oder sehr anspruchsvolleren Rezepten. Die automatische Snack-Empfehlung wurde als nützlich empfunden, da sich die Nutzer darum keine weiteren Gedanken machen mussten.
+
