@@ -32,9 +32,14 @@ def register():
             (email, pw_hash)
         )
         db_conn.commit()
+        cursor = db_conn.execute("SELECT id FROM users WHERE email = ?", (email,))
+        user = cursor.fetchone()
 
-        flash('Account created.', 'success')
-        return redirect(url_for('login') + "#modal-overlay")
+        # Direkt einloggen nach der Registreirung
+        session['user_id'] = user['id']
+
+        flash('Account created and logged in successfully!', 'success')
+        return redirect(url_for('index'))
 
     # Bei GET oder Validierungsfehlern
     return render_template("index.html", active="register", form=form)
