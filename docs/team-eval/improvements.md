@@ -5,7 +5,7 @@ nav_order: 2
 ---
 
 {: .label }
-[Jane Dane]
+[Tatjana K.]
 
 {: .no_toc }
 # How we would improve next time
@@ -16,3 +16,7 @@ nav_order: 2
 + ToC
 {: toc }
 </details>
+
+- Einsatz von SQLAlchemy für eine saubere und flexible Datenbankanbindung
+- Verwendung von Bootstrap, um das UI einfacher zu gestalten
+- Klarere Struktur der App, z.B. Trennung von Benutzer-Authentifizierung und Cocktail-bezogenen Funktionalitäten 

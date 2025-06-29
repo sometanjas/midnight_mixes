@@ -5,24 +5,11 @@ nav_order: 1
 ---
 
 {: .label }
-[Jane Dane]
+[Tatjana K.]
 
 {: .no_toc }
 # Architecture
 
-{: .attention }
-> This page describes how the application is structured and how important parts of the app work. It should give a new-joiner sufficient technical knowledge for contributing to the codebase.
-> 
-> See [this blog post](https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html) for an explanation of the concept and these examples:
->
-> + <https://github.com/rust-lang/rust-analyzer/blob/master/docs/dev/architecture.md>
-> + <https://github.com/Uriopass/Egregoria/blob/master/ARCHITECTURE.md>
-> + <https://github.com/davish/obsidian-full-calendar/blob/main/src/README.md>
-> 
-> For structural and behavioral illustration, you might want to leverage [Mermaid](../ui-components.md), e.g., by charting common [C4](https://c4model.com/) or [UML](https://www.omg.org/spec/UML) diagrams.
-> 
->
-> You may delete this `attention` box.
 
 <details open markdown="block">
 {: .text-delta }
@@ -33,12 +20,29 @@ nav_order: 1
 
 ## Overview
 
-[Give a high-level overview of what your app does and how it achieves it: similar to the value proposition, but targeted at a fellow developer who wishes to contribute.]
+Dieses Repository enthält eine Flask-Anwendung, die eine API sowie serverseitig gerenderte Templates bereitstellt. Zusammen bilden sie einen Dienst zur Cocktailsuche.
 
 ## Codemap
 
-[Describe how your app is structured. Don't aim for completeness, rather describe *just* the most important parts.]
+- `/docs`
+  - enthält statische Dokumentation und Design Decisions
+- `/sql`
+  - enthält vorbereitete Dateien, mit denen die Datenbank automatisch gefüllt wird
+- `/static`
+  - enthält statische Ressourcen
+- `/templates`
+  - enthält die Templates der Webseiten
+- `app.py`
+  - der Haupteinstiegspunkt der Anwendung, in dem sich alle APIs befinden
+- `db.py`
+  - enthält Funktionen zur Datenbankverbindung
+- `forms.py`
+  - definiert Formulare für eine Flask-Webanwendung
+- `requirements.txt`
+  - listet die Python-Abhängigkeiten auf, die zum Erstellen der Application erforderlich sind
 
 ## Cross-cutting concerns
 
-[Describe anything that is important for a solid understanding of your codebase. Most likely, you want to explain the behavior of (parts of) your application. In this section, you may also link to important [design decisions](../design-decisions.md).]
+Die Application erwartet eine vorhandene Datei `db.sqlite`, die die SQLite-Datenbank enthält, um korrekt zu funktionieren.
+Die Application bietet außerdem eine Command-Line Interface Schnittstelle, um eine neue, mit Beispieldaten vorbefüllte Datenbank zu erstellen.
+Dazu kann der Befehl `flask init-db` ausgeführt werden.
