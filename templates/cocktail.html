@@ -1,4 +1,6 @@
 <!--Used a chatGPT generated template https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab-->
+<!--Used ChatGPT to fix Layout: https://chatgpt.com/share/686132ca-b008-800d-8d26-57e1df64b484-->
+
 {% extends "base.html" %}
 
 {% block title %}Midnight Mixes{% endblock %}
@@ -10,64 +12,59 @@
 
 {% block content %}
 <link rel="stylesheet" href="/static/css/cocktail.css" />
-<body>
-<main class="container">
-    <div class="top-bar">
-        <!--https://www.w3schools.com/jsref/met_his_back.asp-->
-        <button class="back-btn" onclick="window.history.back()">←</button>
-        <h1>{{ data.name }}</h1>
-        {% if session.get('user_id') %}
-            <form method="POST" action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}">
-            <button type="submit" class="heart-icon {% if is_liked %}liked{% endif %}" title="Like"></button>
-            </form>
-        {% else %}
-            <a href="{{ url_for('login') }}#modal-overlay" class="heart-icon" title="Bitte einloggen zum Liken"></a>
-        {% endif %}
-    </div>
+<div class="container">
+  <div class="top-bar">
+    <button class="back-btn" onclick="window.history.back()">←</button>
+    <h1>{{ data.name }}</h1>
+    {% if session.get('user_id') %}
+      <form method="POST"
+            action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}">
+        <button type="submit"
+                class="heart-icon{% if is_liked %} liked{% endif %}"
+                title="Like"></button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('login') }}#modal-overlay"
+         class="heart-icon"
+         title="Bitte einloggen zum Liken"></a>
+    {% endif %}
+  </div>
 
-    <div class="content">
-        <div class="left-column">
-            <div class="card gray-card">
-            <div class="ingredients-container">
-            <!--https://stackoverflow.com/questions/33355159/how-can-i-dynamically-render-images-from-my-images-folder-using-jinja-and-flask-->
-            <!--https://stackoverflow.com/questions/62633371/jinja-replace-special-char-->
-                <img src="/static/images/{{ data.image_path | replace('\\', '/') }}"
-                    alt="{{ data.name }}" />
-                <!--https://chatgpt.com/share/685558f3-79dc-800d-8254-af660e6e63d7-->
-                <!-- Zutaten rechts neben dem Bild -->
-                <div class="ingredients-list">
-                <h3>INGREDIENTS</h3>
-                <ul>
-                    {% for ingr in data.ingrs %}
-                    <li>{{ ingr.measure }} {{ ingr.ingr_name }}</li>
-                    {% endfor %}
-                </ul>
-                </div>
-            </div>
-            </div>
-            <div class="card gray-card">
-                <h3>INSTRUCTIONS</h3>
-                <p>
-                    {{ data["instruction"] }}
-                </p>
-            </div>
+  <div class="content-grid">
+    <section class="left-column">
+      <div class="card gray-card ingredients-card">
+        <div class="ingredients-container">
+          <img src="/static/images/{{ data.image_path|replace('\\','/') }}"
+               alt="{{ data.name }}">
+          <div class="ingredients-list">
+            <h3>INGREDIENTS</h3>
+            <ul>
+              {% for ingr in data.ingrs %}
+                <li>{{ ingr.measure }} {{ ingr.ingr_name }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
+      </div>
+      <div class="card gray-card">
+        <h3>INSTRUCTIONS</h3>
+        <p>{{ data.instruction }}</p>
+      </div>
+    </section>
 
-        <div class="right-column">
-            <div class="card maroon-card">
-<!--https://stackoverflow.com/questions/52656157/how-to-parse-a-nested-dictionary-with-jinja2                -->
-                <h3>RECOMMENDED SNACK</h3>
-                <p><strong>{{ data.snack.name }}</strong></p>
-                <h4>INGREDIENTS</h4>
-                <p>{{ data.snack.content }}</p>
-                <h4>INSTRUCTIONS</h4>
-                <p>{{ data.snack.instruction }}</p>
-                <h4>SOURCE</h4>
-                <p>{{ data.snack.source }}</p>
-            </div>
-        </div>
-    </div>
-</main>
-</body>
-</html>
+    <aside class="right-column">
+      <div class="card maroon-card">
+        <h3>RECOMMENDED SNACK</h3>
+        <p><strong>{{ data.snack.name }}</strong></p>
+        <h4>INGREDIENTS</h4>
+        <p>{{ data.snack.content }}</p>
+        <h4>INSTRUCTIONS</h4>
+        <p>{{ data.snack.instruction }}</p>
+        <h4>SOURCE</h4>
+        <p>{{ data.snack.source }}</p>
+      </div>
+    </aside>
+  </div>
+</div>
 {% endblock %}
+
