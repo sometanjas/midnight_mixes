@@ -1,4 +1,4 @@
-# forms.py
+# https://flask.palletsprojects.com/en/stable/patterns/wtforms/
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import DataRequired, Email, EqualTo, Length

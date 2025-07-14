@@ -32,6 +32,7 @@
     color: #f0eadc;
   }
   
+  /**https://www.w3schools.com/cssref/pr_background-image.php**/
   .top-bar .heart-icon {
     grid-column: 3;
     justify-self: end;

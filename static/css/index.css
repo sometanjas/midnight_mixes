@@ -12,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     padding: 1rem 2rem; 
+    height: 70px;
   }
   
   /* h2 absolut zentrieren */

@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, request, url_for, flash, session
+#https://werkzeug.palletsprojects.com/en/stable/utils/#werkzeug.security.generate_password_hash
 from werkzeug.security import generate_password_hash, check_password_hash
 from forms import RegistrationForm, LoginForm, IngredientSearchForm
 
@@ -16,12 +17,16 @@ def index():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
+    #https://flask-wtf.readthedocs.io/en/0.15.x/quickstart/
+    # https://flask-wtf.readthedocs.io/en/1.0.x/api/
     if form.validate_on_submit():
         email = form.email.data.strip().lower()
         pw = form.password.data
 
+        #https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-execute.html
         db_conn = db.get_db()
         cursor = db_conn.execute("SELECT id FROM users WHERE email = ?", (email,))
+        #https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-fetchone.html
         if cursor.fetchone():
             flash('This email is already registered', 'danger')
             return redirect(url_for('register') + "#modal-overlay")
@@ -278,6 +283,7 @@ def my_likes():
         LEFT JOIN cocktail_images im ON im.id_cocktail = c.id
         WHERE l.user_id = ?
     """, (user_id,))
+    # https://dev.mysql.com/doc/connector-python/en/connector-python-api-mysqlcursor-fetchall.html
     liked_cocktails = cursor.fetchall()
 
     data = {
