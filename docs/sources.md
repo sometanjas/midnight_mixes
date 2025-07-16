@@ -65,7 +65,7 @@ Templates — Flask Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from
 Template Inheritance — Flask Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/patterns/templateinheritance/
 
 ### base.html
-The Django template language | Django documentation. (n.d.). Django Project. Retrieved July 16, 2025, from https://docs.djangoproject.com/en/5.2/ref/templates/language/
+The Django template language Django documentation. (n.d.). Django Project. Retrieved July 16, 2025, from https://docs.djangoproject.com/en/5.2/ref/templates/language/
 
 W3Schools.com. (n.d.). Retrieved July 16, 2025, from https://www.w3schools.com/css/css_font_google.asp
 
@@ -82,7 +82,7 @@ Used ChatGPT to fix Layout in cocktail.html: https://chatgpt.com/share/686132ca-
 
 Quickstart — Flask Documentation (3.1.X). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/quickstart/
 
-Jinja2 templates and filters | Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
 Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
@@ -105,7 +105,7 @@ W3Schools.com. (n.d.-b). Retrieved July 16, 2025, from https://www.w3schools.com
 
 Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-b). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
-Jinja2 templates and filters | Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
 ### search.html 
 W3Schools.com. (n.d.-b). Retrieved July 16, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
@@ -114,12 +114,12 @@ Quickstart — Flask-WTF Documentation (0.15.x). (n.d.-b). Retrieved July 16, 20
 
 Add a css class to a field in wtform. (n.d.). Retrieved July 16, 2025, from https://stackoverflow.com/questions/22084886/add-a-css-class-to-a-field-in-wtform
 
-Jinja2 templates and filters | Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
 Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
 ### cocktail.css
-grid-template-columns - CSS | MDN. (n.d.). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/de/docs/Web/CSS/grid-template-columns
+grid-template-columns - CSS MDN. (n.d.). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/de/docs/Web/CSS/grid-template-columns
 
 W3Schools.com. (n.d.-c). Retrieved July 16, 2025, from https://www.w3schools.com/cssref/pr_background-image.php
 
@@ -130,22 +130,22 @@ W3Schools.com. (n.d.-d). Retrieved July 16, 2025, from https://www.w3schools.com
 
 Used a chatGPT generated template for index.css: https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 
-position - CSS | MDN. (2025b, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+position - CSS MDN. (2025b, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
 ### modal.css
 W3Schools.com. (n.d.-e). Retrieved July 16, 2025, from https://www.w3schools.com/css/css_overflow.asp
 
 W3Schools.com. (n.d.-f). Retrieved July 16, 2025, from https://www.w3schools.com/css/css3_box-sizing.asp
 
-position - CSS | MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+position - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
-:target - CSS | MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+:target - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/:target
 
-justify-content - CSS | MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
+justify-content - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 
-How to add a shadow to an element - Learn web development | MDN. (2025, April 29). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Add_a_shadow
+How to add a shadow to an element - Learn web development MDN. (2025, April 29). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Add_a_shadow
 
-Pseudo-classes - CSS | MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
+Pseudo-classes - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 
 
