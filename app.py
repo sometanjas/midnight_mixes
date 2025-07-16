@@ -9,6 +9,7 @@ app.secret_key = "secret_key_just_for_dev_environment"  # für CSRF nötig
 
 import db
 
+
 @app.route('/')
 def index():
     return render_template("index.html")
@@ -74,11 +75,13 @@ def login():
 
     return render_template("index.html", active="login", form=form)
 
+
 @app.route('/logout')
 def logout():
     session.clear()
     flash("Logged out", "info")
     return redirect(url_for("index"))
+
 
 @app.route('/cocktails/<cocktail_id_arg>', methods=['GET'])
 def get_cocktail(cocktail_id_arg):
@@ -89,7 +92,7 @@ def get_cocktail(cocktail_id_arg):
     cocktail_id = cocktail_id_arg
     db_conn = db.get_db()
     if cocktail_id_arg == "random":
-        # search a random cocktail
+        # search a random cocktail - Select Random row from a table: https://stackoverflow.com/questions/2279706/select-random-row-from-a-table
         cursor = db_conn.execute("""select c.id
         from cocktails c
         ORDER BY RANDOM()
@@ -123,6 +126,10 @@ where c_ingr.id_cocktail = ?""", (cocktail_id,))
     data = {'ingrs': [], 'snack': {}}
     # populating the result dataset for the database rows
     for row in c:
+        # Example below for id_cocktail = 11034, cocktail_name = Angel Face
+        # ingr_pos = 1:       Apricot Brandy      Snack:      Olive Tapenade Toast
+        # ingr_pos = 2:       Apple Brandy        Snack:      Olive Tapenade Toast
+        # ingr_pos = 3:       Gin                 Snack:      Salt and Vinegar Chips
         data['id_cocktail'] = row["id_cocktail"]
         data['name'] = row["cocktail_name"]
         data['instruction'] = row["instruction"]
@@ -170,10 +177,13 @@ def search_ingr():
     data = {'item': '', 'cocktails': [], 'search': 'ingredient'}
 
     if form.validate_on_submit():
+        # strip() & lower(): https://hyperskill.org/learn/step/6842
         ingr = form.item.data.strip().lower()
         data['item'] = ingr
+        # % wildcard & SQL-LIKE: https://www.sqlitetutorial.net/sqlite-like/
         ingr = "%" + ingr + "%"
         db_conn = db.get_db()
+        # lower(): https://www.sqlitetutorial.net/sqlite-functions/sqlite-lower/
         cursor = db_conn.execute("""
             SELECT c_ingr.id_cocktail,
                    ingr.name AS ingr_name,
