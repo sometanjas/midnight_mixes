@@ -10,9 +10,11 @@
   <h2 class="heading">Liked Cocktails</h2>
   {% if data.cocktails %}
     <div class="cocktail-grid">
+    <!--https://jinja.palletsprojects.com/en/stable/templates/-->
       {% for cocktail in data.cocktails %}
         <div class="cocktail-card">
           <a href="{{ url_for('get_cocktail', cocktail_id_arg=cocktail.id_cocktail) }}">
+                  <!--https://docs.pexip.com/admin/jinja_templates.htm-->
             <img src="/static/images/{{ cocktail.image_path | replace('\\', '/') }}" alt="{{ cocktail.cocktail_name }}" class="cocktail-image" />
             <p class="cocktail-name">{{ cocktail.cocktail_name }}</p>
           </a>

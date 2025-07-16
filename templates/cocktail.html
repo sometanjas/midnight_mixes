@@ -16,6 +16,7 @@
   <div class="top-bar">
     <button class="back-btn" onclick="window.history.back()">←</button>
     <h1>{{ data.name }}</h1>
+    <!--https://flask.palletsprojects.com/en/stable/quickstart/-->
     {% if session.get('user_id') %}
       <form method="POST"
             action="{{ url_for('like_cocktail', cocktail_id=data.id_cocktail) }}">
@@ -34,6 +35,7 @@
     <section class="left-column">
       <div class="card gray-card ingredients-card">
         <div class="ingredients-container">
+        <!--https://docs.pexip.com/admin/jinja_templates.htm-->
           <img src="/static/images/{{ data.image_path|replace('\\','/') }}"
                alt="{{ data.name }}">
           <div class="ingredients-list">
@@ -55,6 +57,7 @@
     <aside class="right-column">
       <div class="card maroon-card">
         <h3>RECOMMENDED SNACK</h3>
+        <!--https://jinja.palletsprojects.com/en/stable/templates/-->
         <p><strong>{{ data.snack.name }}</strong></p>
         <h4>INGREDIENTS</h4>
         <p>{{ data.snack.content }}</p>

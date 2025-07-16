@@ -1,4 +1,5 @@
 /* Basis-Reset und Font */
+/*https://www.w3schools.com/css/css3_box-sizing.asp*/
    * {
     margin: 0;
     padding: 0;
@@ -29,6 +30,8 @@
   }
   
   /* Overlay  Modal */
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/position*/
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content*/
   #modal-overlay {
     display: none;  /* Normalerweise versteckt */
     position: fixed;
@@ -42,6 +45,7 @@
   }
   
   /* Sobald in der URL #modal-overlay steht, wird display:flex aktiv */
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/:target*/
   #modal-overlay:target {
     display: flex;
   }
@@ -85,7 +89,7 @@
   .modal-tabs .tab-btn {
     flex: 1;
     padding: 12px 0;
-    background-color: #512127; /* dunkles Weinrot (inaktiv) */
+    background-color: #512127; 
     text-align: center;
     color: #f0eadc;
     font-size: 16px;
@@ -94,14 +98,14 @@
   }
   
   .modal-tabs .tab-btn.active {
-    background-color: #872d37; /* helleres Weinrot (aktiv) */
+    background-color: #872d37; 
   }
   
   .modal-tabs .tab-btn:not(.active):hover {
-    background-color: #512127; /* beim Hover etwas dunkler */
+    background-color: #512127; 
   }
   
-  /* Modal Body / Formular */
+  
   .modal-body {
     padding: 20px 24px;
   }
@@ -127,6 +131,7 @@
     outline: none;
   }
   
+  /*https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Add_a_shadow*/
   .form input:focus {
     box-shadow: 0 0 0 2px #ffffff;
   }
@@ -144,6 +149,7 @@
     cursor: pointer;
   }
   
+  /*https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes*/
   .form .btn-primary:hover {
     background-color: #37373a;
   }
