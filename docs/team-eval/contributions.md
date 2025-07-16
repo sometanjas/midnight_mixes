@@ -46,7 +46,7 @@ Contributions
 : Erstellung der Inhalte für die Snack DB
 : Erstellung des HTML und CSS für das Login Modal
 : Erstellung und Einfügen vom Midnight Mixes Logo 
-: Erstellunf von `index.html` 
+: Erstellung von `index.html` 
 : Erstellung von DB-Funktionen (anfangs in `app.py`)
 : Erstellung der User Tabelle
 : Implementierung der Login und Register Logik in `app.py`
