@@ -15,6 +15,7 @@
     gap: 1rem;
   }
   
+  /*https://css-tricks.com/almanac/properties/c/cursor/*/
   .top-bar .back-btn {
     grid-column: 1;
     background: none;

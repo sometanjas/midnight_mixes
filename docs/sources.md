@@ -9,6 +9,14 @@ nav_order: 5
 
 Die folgenden Quellen sind auch an den entsprechenden Stellen im Sourcecode gekennzeichnet. Ebenso haben wir das im Rahmen der Lehrveranstaltung zur Verfügung gestellte fswd-app Repository als Quelle verwendet (https://github.com/hwrberlin/fswd-app.git). 
 
+### Images
+
+Das Midnight Mixes Logo und die Bilder auf der index und complexity Seite wurden mit ChatGPT generiert. 
+
+https://chatgpt.com/share/680a8da4-5994-800d-9fca-e3bfde085722
+
+https://chatgpt.com/share/680a8dca-3f10-800d-a798-5fdf9dc62684
+
 ### CSRF 
 teclado. (2024, March 28). What is a CSRF token? — Cookies and CSRF     explained for Django and Flask [Video]. YouTube. Retrieved June 8, 2025, from https://www.youtube.com/watch?v=MoN2CNCjRjc
 
@@ -87,6 +95,8 @@ W3Schools.com: Python String isnumeric() method. (n.d.). Retrieved June 15, 2025
 
 ## HTML & CSS
 
+LearnWebCode. (2025, January 2). HTML and CSS tutorial (2025) [Video]. YouTube. Retrieved June 9, 2025, from https://www.youtube.com/watch?v=lSZ9jKHs4oA
+
 ### Templates 
 Templates — Flask Documentation (3.1.x). (n.d.). Retrieved June 9, 2025, from https://flask.palletsprojects.com/en/stable/tutorial/templates/
 
@@ -97,6 +107,8 @@ Template Inheritance — Flask Documentation (3.1.x). (n.d.). Retrieved June 9, 
 The Django template language Django documentation. (n.d.). Django Project. Retrieved June 9, 2025, from https://docs.djangoproject.com/en/5.2/ref/templates/language/
 
 W3Schools.com. (n.d.). Retrieved June 9, 2025, from https://www.w3schools.com/css/css_font_google.asp
+
+Create dynamic URLs in Flask with url_for() (n.d.). Retrieved June 9, 2025, from https://stackoverflow.com/questions/7478366/create-dynamic-urls-in-flask-with-url-for
 
 How to make body tag to adjust for scroll bar?. (n.d.). Retrieved June 9, 2025, from https://stackoverflow.com/questions/6466344/how-to-make-body-tag-to-adjust-for-scroll-bar
 
@@ -147,6 +159,19 @@ Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved June 17, 202
 
 Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved June 20, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
+### base.css 
+
+W3Schools.com. (n.d.). Retrieved June 9, 2025, from https://www.w3schools.com/cssref/css3_pr_align-items.php
+
+W3Schools.com. (n.d.-b). Retrieved June 9, 2025, from https://www.w3schools.com/cssref/css3_pr_justify-content.php
+
+W3Schools.com. (n.d.-c). Retrieved June 9, 2025, from https://www.w3schools.com/cssref/css3_pr_align-self.php
+
+W3Schools.com. (n.d.-d). Retrieved June 9, 2025, from https://www.w3schools.com/cssref/pr_text_text-decoration.php
+
+Cope, S. (2025, January 28). cursor  CSS-Tricks. CSS-Tricks. Retrieved June 9, 2025, from https://css-tricks.com/almanac/properties/c/cursor/
+
+
 ### cocktail.css
 grid-template-columns - CSS MDN. (n.d.). MDN Web Docs. Retrieved June 29, 2025, from https://developer.mozilla.org/de/docs/Web/CSS/grid-template-columns
 
@@ -154,21 +179,39 @@ W3Schools.com. (n.d.-c). Retrieved June 29, 2025, from https://www.w3schools.com
 
 Used ChatGPT to fix Layout in cocktail.css: https://chatgpt.com/share/686132ca-b008-800d-8d26-57e1df64b484
 
+Cope, S. (2025, January 28). cursor  CSS-Tricks. CSS-Tricks. Retrieved June 9, 2025, from https://css-tricks.com/almanac/properties/c/cursor/
+
 ### index.css
 W3Schools.com. (n.d.-d). Retrieved June 24, 2025, from https://www.w3schools.com/css/css_align.asp
 
 Used a chatGPT generated template for index.css: https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 
-position - CSS MDN. (2025b, July 14). MDN Web Docs. Retrieved June 17, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+position - CSS MDN. MDN Web Docs. Retrieved June 17, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+
+W3Schools.com. (n.d.-e). Retrieved June 24, 2025, from https://www.w3schools.com/css/css3_2dtransforms.asp
+
+W3Schools.com. (n.d.-f). Retrieved June 24, 2025, from https://www.w3schools.com/css/css_align.asp
 
 ### modal.css
 W3Schools.com. (n.d.-e). Retrieved June 3, 2025, from https://www.w3schools.com/css/css_overflow.asp
 
 W3Schools.com. (n.d.-f). Retrieved June 3, 2025, from https://www.w3schools.com/css/css3_box-sizing.asp
 
-position - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+position - CSS MDN. MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
 :target - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/:target
+
+W3Schools.com. (n.d.-g). Retrieved June 3, 2025, from https://www.w3schools.com/cssref/pr_text_text-decoration.php
+
+W3Schools.com. (n.d.-h). Retrieved June 3, 2025, from https://www.w3schools.com/cssref/css3_pr_flex-direction.php
+
+outline - CSS. MDN Web Docs. Retrieved June 3, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/outline
+
+W3Schools.com. (n.d.-i). Retrieved June 3, 2025, from https://www.w3schools.com/cssref/pr_text_letter-spacing.php
+
+z-index - CSS. MDN Web Docs. Retrieved June 3, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+
+W3Schools.com. (n.d.-j). Retrieved June 3, 2025, from https://www.w3schools.com/css/css_dimension.asp
 
 justify-content - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 

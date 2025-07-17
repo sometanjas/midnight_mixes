@@ -9,6 +9,8 @@
     overflow-x: hidden;
   }
   
+  /*https://www.w3schools.com/cssref/css3_pr_align-items.php*/
+  /*https://www.w3schools.com/cssref/css3_pr_justify-content.php*/
   .banner {
     display: flex;
     align-items: center;
@@ -27,6 +29,7 @@
     height: auto;
   }
   
+  /*https://www.w3schools.com/cssref/css3_pr_align-self.php*/
   .banner-title {
     font-family: 'Bodoni Moda', serif;
     font-size: 1.2rem;
@@ -42,6 +45,7 @@
     align-items: center;
   }
   
+  /*https://www.w3schools.com/cssref/pr_text_text-decoration.php*/
   .nav-btn {
     display: inline-block;
     margin-left: 12px;
@@ -84,6 +88,7 @@
     padding: 2rem;
   }
   
+  /*https://css-tricks.com/almanac/properties/c/cursor/*/
   .cocktail-card {
     position: relative;
     width: 300px;

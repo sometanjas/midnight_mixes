@@ -57,6 +57,9 @@ body {
     cursor: pointer;
 }
 
+/*Für error page*/
+/*https://www.w3schools.com/css/css_align.asp*/
+/*https://www.w3schools.com/css/css3_2dtransforms.asp*/
 /*https://www.w3schools.com/css/css_align.asp*/
 .error-container {
     display: flex;
