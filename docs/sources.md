@@ -8,6 +8,8 @@ nav_order: 5
 {: .label }
 [Julia K., Tatjana K.]
 
+Die folgenden Quellen sind auch an den entsprechenden Stellen im Sourcecode gekennzeichnet. Ebenso haben wir das im Rahmen der Lehrveranstaltung zur Verfügung gestellte fswd-app Repository als Quelle verwendet (https://github.com/hwrberlin/fswd-app.git). 
+
 ### CSRF 
 teclado. (2024, March 28). What is a CSRF token? — Cookies and CSRF     explained for Django and Flask [Video]. YouTube. Retrieved June 8, 2025, from https://www.youtube.com/watch?v=MoN2CNCjRjc
 
@@ -87,38 +89,38 @@ W3Schools.com: Python String isnumeric() method. (n.d.). Retrieved June 15, 2025
 ## HTML & CSS
 
 ### Templates 
-Templates — Flask Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/tutorial/templates/
+Templates — Flask Documentation (3.1.x). (n.d.). Retrieved June 9, 2025, from https://flask.palletsprojects.com/en/stable/tutorial/templates/
 
 ### Template inheritance 
-Template Inheritance — Flask Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/patterns/templateinheritance/
+Template Inheritance — Flask Documentation (3.1.x). (n.d.). Retrieved June 9, 2025, from https://flask.palletsprojects.com/en/stable/patterns/templateinheritance/
 
 ### base.html
-The Django template language Django documentation. (n.d.). Django Project. Retrieved July 16, 2025, from https://docs.djangoproject.com/en/5.2/ref/templates/language/
+The Django template language Django documentation. (n.d.). Django Project. Retrieved June 9, 2025, from https://docs.djangoproject.com/en/5.2/ref/templates/language/
 
-W3Schools.com. (n.d.). Retrieved July 16, 2025, from https://www.w3schools.com/css/css_font_google.asp
+W3Schools.com. (n.d.). Retrieved June 9, 2025, from https://www.w3schools.com/css/css_font_google.asp
 
-How to make body tag to adjust for scroll bar?. (n.d.). Retrieved July 16, 2025, from https://stackoverflow.com/questions/6466344/how-to-make-body-tag-to-adjust-for-scroll-bar
+How to make body tag to adjust for scroll bar?. (n.d.). Retrieved June 9, 2025, from https://stackoverflow.com/questions/6466344/how-to-make-body-tag-to-adjust-for-scroll-bar
 
-Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
+Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.). Retrieved June 18, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
-Message Flashing — Flask Documentation (3.1.x). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/patterns/flashing/
+Message Flashing — Flask Documentation (3.1.x). (n.d.). Retrieved June 18, 2025, from https://flask.palletsprojects.com/en/stable/patterns/flashing/
 
 ### cocktail.html 
 Used a chatGPT generated template for cocktail.html: https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 
 Used ChatGPT to fix Layout in cocktail.html: https://chatgpt.com/share/686132ca-b008-800d-8d26-57e1df64b484
 
-Quickstart — Flask Documentation (3.1.X). (n.d.). Retrieved July 16, 2025, from https://flask.palletsprojects.com/en/stable/quickstart/
+Quickstart — Flask Documentation (3.1.X). (n.d.). Retrieved June 29, 2025, from https://flask.palletsprojects.com/en/stable/quickstart/
 
-Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved June 29, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
-Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
+Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved June 29, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
 ### complexity.html
 Used a ChatGPT generated template for complexity.html:
 https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 
-W3Schools.com. (n.d.-b). Retrieved July 16, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
+W3Schools.com. (n.d.-b). Retrieved June 9, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
 
 Used ChatGPT to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586
 
@@ -129,41 +131,41 @@ https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 Used ChatGPT to make a clickable image with HTML&CSS: https://chatgpt.com/share/68458c9e-9310-800e-a529-608201ccf586
 
 ### likes.html
-W3Schools.com. (n.d.-b). Retrieved July 16, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
+W3Schools.com. (n.d.-b). Retrieved June 9, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
 
-Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-b). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
+Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-b). Retrieved June 18, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
-Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved June 18, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
 ### search.html 
-W3Schools.com. (n.d.-b). Retrieved July 16, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
+W3Schools.com. (n.d.-b). Retrieved June 9, 2025, from https://www.w3schools.com/jsref/met_his_back.asp
 
-Quickstart — Flask-WTF Documentation (0.15.x). (n.d.-b). Retrieved July 16, 2025, from https://flask-wtf.readthedocs.io/en/0.15.x/quickstart/
+Quickstart — Flask-WTF Documentation (0.15.x). (n.d.-b). Retrieved June 17, 2025, from https://flask-wtf.readthedocs.io/en/0.15.x/quickstart/
 
-Add a css class to a field in wtform. (n.d.). Retrieved July 16, 2025, from https://stackoverflow.com/questions/22084886/add-a-css-class-to-a-field-in-wtform
+Add a css class to a field in wtform. (n.d.). Retrieved June 17, 2025, from https://stackoverflow.com/questions/22084886/add-a-css-class-to-a-field-in-wtform
 
-Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved July 16, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
+Jinja2 templates and filters Pexip Infinity Docs. (n.d.). Retrieved June 17, 2025, from https://docs.pexip.com/admin/jinja_templates.htm
 
-Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved July 16, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
+Template Designer Documentation — Jinja Documentation (3.1.x). (n.d.-c). Retrieved June 20, 2025, from https://jinja.palletsprojects.com/en/stable/templates/
 
 ### cocktail.css
-grid-template-columns - CSS MDN. (n.d.). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/de/docs/Web/CSS/grid-template-columns
+grid-template-columns - CSS MDN. (n.d.). MDN Web Docs. Retrieved June 29, 2025, from https://developer.mozilla.org/de/docs/Web/CSS/grid-template-columns
 
-W3Schools.com. (n.d.-c). Retrieved July 16, 2025, from https://www.w3schools.com/cssref/pr_background-image.php
+W3Schools.com. (n.d.-c). Retrieved June 29, 2025, from https://www.w3schools.com/cssref/pr_background-image.php
 
 Used ChatGPT to fix Layout in cocktail.css: https://chatgpt.com/share/686132ca-b008-800d-8d26-57e1df64b484
 
 ### index.css
-W3Schools.com. (n.d.-d). Retrieved July 16, 2025, from https://www.w3schools.com/css/css_align.asp
+W3Schools.com. (n.d.-d). Retrieved June 24, 2025, from https://www.w3schools.com/css/css_align.asp
 
 Used a chatGPT generated template for index.css: https://chatgpt.com/share/683d9b02-3164-800e-b9cb-468958df9cab
 
-position - CSS MDN. (2025b, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
+position - CSS MDN. (2025b, July 14). MDN Web Docs. Retrieved June 17, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
 ### modal.css
-W3Schools.com. (n.d.-e). Retrieved July 16, 2025, from https://www.w3schools.com/css/css_overflow.asp
+W3Schools.com. (n.d.-e). Retrieved June 3, 2025, from https://www.w3schools.com/css/css_overflow.asp
 
-W3Schools.com. (n.d.-f). Retrieved July 16, 2025, from https://www.w3schools.com/css/css3_box-sizing.asp
+W3Schools.com. (n.d.-f). Retrieved June 3, 2025, from https://www.w3schools.com/css/css3_box-sizing.asp
 
 position - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
@@ -171,7 +173,7 @@ position - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from
 
 justify-content - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content
 
-How to add a shadow to an element - Learn web development MDN. (2025, April 29). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Add_a_shadow
+How to add a shadow to an element - Learn web development MDN. (2025, April 29). MDN Web Docs. Retrieved June 3, 2025, from https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Solve_CSS_problems/Add_a_shadow
 
 Pseudo-classes - CSS MDN. (2025, July 14). MDN Web Docs. Retrieved July 16, 2025, from https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
