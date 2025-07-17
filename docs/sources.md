@@ -4,7 +4,6 @@ nav_order: 5
 ---
 
 # Sources 
-
 {: .label }
 [Julia K., Tatjana K.]
 
